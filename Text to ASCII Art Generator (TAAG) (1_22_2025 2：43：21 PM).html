@@ -1,0 +1,961 @@
+<!DOCTYPE html> <html lang=en data-darkreader-mode=dynamic data-darkreader-scheme=dark><!--
+ Page saved with SingleFile 
+ url: http://patorjk.com/software/taag/#p=testall&f=Slant%20Relief&t=Hankerz 
+ saved date: Wed Jan 22 2025 14:43:21 GMT-0500 (Eastern Standard Time)
+--><!-- manifest="taag.appcache" --><meta charset=utf-8><style class="darkreader darkreader--inline" media=screen>[data-darkreader-inline-bgcolor]{background-color:var(--darkreader-inline-bgcolor)!important}[data-darkreader-inline-border-bottom]{border-bottom-color:var(--darkreader-inline-border-bottom)!important}[data-darkreader-inline-border-left]{border-left-color:var(--darkreader-inline-border-left)!important}[data-darkreader-inline-border-right]{border-right-color:var(--darkreader-inline-border-right)!important}[data-darkreader-inline-border-top]{border-top-color:var(--darkreader-inline-border-top)!important}</style><style class="darkreader darkreader--variables" media=screen>:root{--darkreader-neutral-background:var(--darkreader-background-ffffff,#181a1b);--darkreader-neutral-text:var(--darkreader-text-000000,#e8e6e3);--darkreader-selection-background:var(--darkreader-background-0060d4,#004daa);--darkreader-selection-text:var(--darkreader-text-ffffff,#e8e6e3)}</style><style class="darkreader darkreader--user-agent" media=screen>@layer{html{background-color:var(--darkreader-background-ffffff,#181a1b)!important}html{color-scheme:dark!important}iframe{color-scheme:dark!important}html,body{background-color:var(--darkreader-background-ffffff,#181a1b)}html,body{border-color:#736b5e;color:var(--darkreader-text-000000,#e8e6e3)}a{color:#3391ff}table{border-color:#545b5e}mark{color:var(--darkreader-text-000000,#e8e6e3)}::placeholder{color:#b2aba1}input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill{background-color:#404400!important;color:var(--darkreader-text-000000,#e8e6e3)!important}::selection{background-color:#004daa!important;color:#e8e6e3!important}::-moz-selection{background-color:#004daa!important;color:#e8e6e3!important}}</style>
+<meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv=X-UA-Compatible content="IE=EmulateIE8">
+<title>Text to ASCII Art Generator (TAAG)</title>
+<style>html{margin:0;padding:0;border:0;overflow:hidden}body{margin:0;padding:0;border:0;overflow:hidden;height:100%;max-height:100%;font-family:Verdana,arial,helvetica,sans-serif;font-size:12px}#header,#footer{position:absolute;top:0;left:0;width:100%;overflow:hidden;color:white}#header{background-color:#888888;height:170px;padding:10px;margin:0px}#footer{top:auto;bottom:0;height:50px;overflow:hidden;background-color:#000000;color:white}#maincontent{position:fixed;top:190px;left:0;right:0;bottom:50px;overflow:auto;background:#fff;border:3px #cccccc solid}#layoutGrid{margin:0 auto}#layoutGrid,.layoutGridStyle{padding:0px;border-width:0px;vertical-align:top}.darkknightTable{background:#262b38;border-left:3px solid #567;border-right:3px solid #000;border-top:3px solid #567;border-bottom:3px solid #000}.darkknightTable tbody,.darkknightTable tr{padding:0px;margin:0px}#mainControls,#mainControls td{margin:0px;padding:0px}#mainControls .controlCells{border-top:1px solid #567;border-bottom:1px solid #000;border-left:1px solid #567;border-right:1px solid #000;vertical-align:top;text-align:center;padding:5px}.tableLineFitter{height:124px}.tableLineFitter,.tableLineFitter tbody,.tableLineFitter tr,.tableLineFitter td{padding:0;margin:0;border-width:0px;vertical-align:middle;border-collapse:collapse}#inputText{height:52px}#outputFigDisplay{padding-top:10px;padding-left:20px;padding-right:20px}#outputFigDisplay pre{margin-top:15px;margin-bottom:15px}.fig{font-size:10pt;font-family:Monospace;white-space:pre}.fig-ansi{font-size:10pt;font-family:"Courier New",Monospace;white-space:pre}#footer a{text-decoration:underline;font-weight:bold;color:#abc}#footer a:visited{background:#262b38;color:#abc}#footer a:hover{color:#cdf;text-decoration:underline;position:relative}.footerDiv{float:left;margin-top:5px;margin-left:10px}.footer-logo{float:right;margin-right:20px;padding-top:5px}@media (max-width:800px){}@media (max-width:736px){#mainControls{border-width:1px}.app-extra-inputs{width:150px}.app-extra-inputs select{max-width:100px}#header{height:120px;padding:0}#maincontent{top:120px;bottom:25px}#footer{height:25px}#inputText{height:22px}#outputFigDisplay{padding:0}#outputFigDisplay pre{margin-top:0px;margin-bottom:0px}.footer-logo{margin-right:5px;padding-top:0px}.tableLineFitter{height:94px}}</style><style class="darkreader darkreader--sync" media=screen>html{border-color:currentcolor}body{border-color:currentcolor}#header{color:var(--darkreader-text-ffffff,#e8e6e3)}#header{background-color:rgb(91,99,103)}#footer{background-color:rgb(0,0,0);color:var(--darkreader-text-ffffff,#e8e6e3)}#maincontent{background-color:var(--darkreader-background-ffffff,#181a1b);background-image:none;border-top-color:rgb(62,68,70);border-right-color:var(--darkreader-border-cccccc,#3e4446);border-bottom-color:var(--darkreader-border-cccccc,#3e4446);border-left-color:var(--darkreader-border-cccccc,#3e4446)}.darkknightTable{background-color:var(--darkreader-background-262b38,#1e222d);background-image:none;border-left-color:var(--darkreader-border-556677,#6a6357);border-right-color:var(--darkreader-border-000000,#8c8273);border-top-color:var(--darkreader-border-556677,#6a6357);border-bottom-color:var(--darkreader-border-000000,#8c8273)}#mainControls .controlCells{border-top-color:var(--darkreader-border-556677,#6a6357);border-bottom-color:var(--darkreader-border-000000,#8c8273);border-left-color:var(--darkreader-border-556677,#6a6357);border-right-color:var(--darkreader-border-000000,#8c8273)}#footer a{text-decoration-color:currentcolor;color:var(--darkreader-text-aabbcc,#a4b8c8)}#footer a:visited{background-color:var(--darkreader-background-262b38,#1e222d);background-image:none;color:var(--darkreader-text-aabbcc,#a4b8c8)}#footer a:hover{color:var(--darkreader-text-ccddff,#a8d3ff);text-decoration-color:currentcolor}</style>
+<!--[if lte IE 6]>
+    <script>
+        window.location = "/software/taag-v1/";
+    </script>
+    <![endif]-->
+<meta name=darkreader content=0204a34b4a0692b053d95b91faed83e4><style class="darkreader darkreader--override" media=screen>::placeholder{opacity:0.5!important}select option{background-color:var(--darkreader-neutral-background)!important}</style>
+<meta name=referrer content=no-referrer><link type=image/x-icon rel="shortcut icon" href=data:image/x-icon;base64,AAABAAQAEBAAAAAAAACTAQAARgAAABgYAAAAAAAAKQIAANkBAAAgIAAAAAAAAL4CAAACBAAAQEAAAAAAAACOBQAAwAYAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgDAAAAKC0PUwAAAJBQTFRFYtn7Ytn7Ytn7Ytn7N15pVbTQSZOoMlFaRoqeRIWYQXuLP3aGPnKBNltmXc3tWcDeVLHLS5mvNlpkM1ReKjtAXcvqT6S8TqG5TJ20PXB+OmZzOWRwMU9XMEpSKDM2Ydf4YNX2V7nVSI6iRIKUOGBsLUBGLD9EJCYnIiIiXMjnSpWrRIOVQ4CRPGt5O2p4KDI1kt6z+wAAAAN0Uk5T5kpJUo82dwAAAK9JREFUGNNVz0cSwjAUA1CD3O30XulJ6Pe/HUnwAv7iz+htNCJbgp+b45KllwN5LFcCUCRFzLlXJLmDkwLSFFDKAdewl4uF5l9graD94dBT0bIZdsfuZgQLQyZM1B13xCbAqwqmKaieQFKRMuYwtf/u/dqAxyVBcKZNqvd7nTbeOVhb7iIarR1L8XC1UsJvuwxSOVAG4TCE0CcHGaVe5s/vusAiUcMAVkdYYPM/f/MBQsUL24ttLxkAAAAASUVORK5CYIKJUE5HDQoaCgAAAA1JSERSAAAAGAAAABgIAwAAANepzcoAAACfUExURWLZ+2LZ+2LZ+2LZ+2LZ+2LZ+2LZ+2LZ+yIiIkOClDxsejdeaTNTXC1CRys9Qla20kuXrTZbZSo4PF7O7li+20iOokB6ijpmczhgayUsLlKrxUqVqjBJUSk1OScyNSQnKV3L6kybsUeLn0J9jkB3hj5ygTVYYmHV91zI51Oxy1GowkaJnDhjby9HTVzJ6E+kvU6ftkycs0mSp2DT9FrD4dXnlRwAAAAHdFJOU+2RBu6QiYis+LsiAAABMklEQVQoz22S127DMAxFndGSmt57z+zZ/v+3VbKDQEDDB16BhyDEYa1XFvyzzWptbeeXH4VL6BT5s35bS34ni6fW8CK7OfCKHzE/VWL3I8vOwWwhsz+7ADsqxKjeU2wAl2qPqD1lBojPylVOXilJqAFyQUaJjKEciXDewKcSqYeZbWfoUZTUX4BT87bIeAu2DQ9+LB68djS4o5IOE4gQI0gwVKl4V8AbdDUMAJVBgLrO4CnQp3uAGxLgiBwI3gCuaa8AxClpGLkEEEUQXIjbkDReftUKgWFRgrKyCFGI9t0HqRjHdJpS5KzqjQZ7F8DGZ44HADYYIIlBkbK0lVDXBHpWB8SjnpsJ8roJXMwONQ/2dWgASDxv+gXYM+kxMFfYjGS37Hy4vuJb+Ghf6nw2H8/nD7X8HlUyAofLAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAArlBMVEVi2fti2fti2fti2fsAAABi2fti2fti2fsiIiIlLC4jJidPorpMnLIxTVUvR04sQEZHjaFZwN1Rq8RRqMFLl60oMzZeze1KlKlFh5pCf5BAeos4Ym01WWQyUFlg0/RaxeNXutdVtdBUssxEhJZDgZM7a3g6aHUzU1wuREsnMDJGip49bnw0VmAwSlIrOj8pNztf0PFcyehWuNRSrsg/dYRJkaZJkaVg1fc/dYU+c4IInWumAAAAB3RSTlOt8SbvAPMoZ28DBAAAAbhJREFUOMuFkwlvozAUhN202xmbm0BIQu6DQM42abu7//+PrQ0BaS01HQlrQN+z7OE98dITT/hGT6L3InrPeKDnnhCtd8Jra5dDp7Wi2/+TlOPfxs0+FPmJRr/aDa4snAOVrnQU/8QFF2jUAoXSy/uOScLJQFu1tYDSg1FCurXxTxYQ7Fogqc3UtwCvNGvGaMGsLphawFgCc4cX173QmQNyZAFDelKSZynPpJQe9/8BYUoG4ZHLOiYew4BMww5YpZz0L2twrG/6DoyJzTmesFo1QEx/ob9WUwkcyANQeeYIC599A8RqAq0B9eueWnv0qd6gNWGsgS0Hzc2VfgygE1FTNEVbCI3n0HpTvGFogCFu9x1y9jUAh14EbKSfAgVZAOnJnCHy6DS3iCXz1XkEbnRYc80S68sqp+x3OQwlWSbH5h9HPCYlKddWkr5JMqiqwCTpc2NFvZaYRS7TLEvpRjPIsQXsArN+MZqzjri0+8FvGiYjv+4FFnDym9ZuO8qzga0y/ZwzzO49mVvAlYflqC53FD9uf7myAIQkt4NuLvZogW4w3VHcTdbaRTc4Ag8lxOvj4X39cfz/Ae3hMKJn+9fQAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAA5FBMVEUAAABi2fti2fti2fti2fti2fti2fti2fti2fti2fti2fti2fti2fti2fsiIiIoNDgkJylbxeQzVF4uREtQpb5LmK4wTFQtQUdcyOdYvNlKlqxHjqIlKixPorpMm7FEhZc8bXs7aXc4YW0mLS8jJSZg1PVUssxTr8lOoLc9cYA3X2srPEEqOT5ezu0vR04sP0QnMTQjIyRdy+pJk6gpNzth1vhawuBNnbRJkaVAd4Zez+9Yv9xWttFDgZNBeotRqsRGip02XGdf0fJWudU5Y281WWMzUVpSrMZNnrVCfY4yUFhQp8Cu+e+rAAAADXRSTlMA+dePKwaVlPS9u5gJoynS0wAABExJREFUWMOll3dj2jAQxUnS3frnwTDD7BH2JmwCSaBt8v2/T73AMlDThvcP0iE9607vTlLIwoe72xvpP3Fze/ch5ODjZ+md+P7Dnv9Neje+fjQJPklX4LPp/801BDcfQnenVnXxcG5w4v6M+S50e2x6iymUwtOF33qfa0Av9nY8+jZ07MEvXNSfPWNFw0X62IfQkSEO5NbTNiZWe2MNE9pykoNe62jCMcEUJtbvzzoQTljNRQfI2+tJwfICQYOO24o0oFSVpAzQrrjGJuFgggeY7tujPJBJAjXJc6bUDyT4CUmvl8KEzzKBSiBBxh/nhQLG3L9HkUCCKDwK3UEJlKhgSMP4EkFEmA/dos+FKqQDCSKQEQOCOgfuD6ak2QkkWMD6oCkFTOmOwThEPguJQIJ4yduzMKWx7VbJ2/wcxdklIWk2UWVcByO33e22OQXq4/u4ZX8NFJLzCTmS3egKJ1D0TTYtMw0mSNTxUBx2wiY6wyIeCgExKE922JC1bAdWrbKr6dYK9KwmY+M1VT5L8LQcYiOcKEv9IrokQKfYl0YJ3f3A79kpwcTi7+bvN8h2LHkWCZ6hYf50KVTyXYsidUQw2wCd1MyWStLKopxt7z8+9vc1ZW2l0tgcm+oA25ZIEG9A0SFtlchLBoblZzlnmPac1RwVMaQXlCcnTYvQVD2CURO0uORgQ/MFLLZy2A1K2Unk+pDCXnAaDMsHghy8iOkAstXK4yLvFCPEVH0xzXsCFdqShyEQderrHtbqxkBTGBYD1SXI+IvAxOWrckDanZH0F6+oSxAVctThez1H8GrN8HDv8IWcSrrzicapKioHqE4xoiEM28HDPogFqInMODLc54UT+44/iDWoH3ZhJpu9vTrzyJpTl1pNbDRmjmNbbxufCtBteUKad0F2HCwbFEYluraoCj3oFeyBXRRPSNGhOT8hSlmNAbHMyA5dSlruD8aHatU5039DVhrYKxuN7cHqUTJlDaC5SuQpmj3ZipAAFYZOMiVWlmPK8jSd1ZqBiR6duNkxiIkEMQzzi3FX20rt4WxBiWfbWCjphYFuLfmANeiDF73npMZS/XtJq2zw0GnHtO1Wi4UbeNCCzwUzWN3k9FXmDOTdNCqTu1CV27bvT4nIQAOlHmu3Y3UFtEFkbmWvRjOY4KlI3jsiShk7JxRvVo2eGkgwF+4was9OsgUwF6IZfD+owEAsLb1+S4GqmKnVS6fzL98NRR5C1vd/Mojg+PxfK1DKCoZHGFxawVjo9g1QEtJ/rKACE2G4I+6o7waT/uf7gZWTZAfAVNAZiWAh6YeyNdeAtflR8aIZRh4FE6xcJ9VpD+S3o6vuL7NxQcp94Hc1ZcmXQt932c4mTXbmgQSOVBy00+eu+ykpmMBapg4UN+njB0cT0KPSCcGZJ9MiXWmde/L8fD41fjGfPFfhNnR3HcHd1c++Kx+en65++l7/+H738/+L+/z/A7QoEscau5d8AAAAAElFTkSuQmCC><style>.sf-hidden{display:none!important}</style><link rel=canonical href="http://patorjk.com/software/taag/#p=testall&amp;f=Slant%20Relief&amp;t=Hankerz"><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body>
+ <div id=header>
+ 
+<table id=layoutGrid><tbody class=layoutGridStyle><tr class=layoutGridStyle>
+<td class=layoutGridStyle>
+ <table id=mainControls class="darkknightTable darkknight">
+ <thead class="phone-hide sf-hidden">
+ 
+ </thead>
+ 
+ <tbody><tr>
+ <td class="controlCells app-extra-inputs">
+ <table class=tableLineFitter>
+ <tbody><tr><td>
+ <label for=fontList>Font:</label>
+ <select id=fontList>
+<optgroup label="Featured FIGlet Fonts">
+<option value="3D Diagonal.flf">3D Diagonal</option>
+<option value=Alpha.flf>Alpha</option>
+<option value=Acrobatic.flf>Acrobatic</option>
+<option value=Avatar.flf>Avatar</option>
+<option value=babyface-lame.flf>Babyface Lame</option>
+<option value=babyface-leet.flf>Babyface Leet</option>
+<option value="Big Money-ne.flf">Big Money-ne</option>
+<option value="Big Money-nw.flf">Big Money-nw</option>
+<option value="Big Money-se.flf">Big Money-se</option>
+<option value="Big Money-sw.flf">Big Money-sw</option>
+<option value=Big.flf>Big</option>
+<option value=Blocks.flf>Blocks</option>
+<option value="BlurVision ASCII.flf">BlurVision ASCII</option>
+<option value=Bulbhead.flf>Bulbhead</option>
+<option value=Cards.flf>Cards</option>
+<option value=Chiseled.flf>Chiseled</option>
+<option value=Crawford2.flf>Crawford2</option>
+<option value=Crazy.flf>Crazy</option>
+<option value="Dancing Font.flf">Dancing Font</option>
+<option value=DiamFont.flf>DiamFont</option>
+<option value=Doh.flf>Doh</option>
+<option value=Doom.flf>Doom</option>
+<option value="Efti Wall.flf">Efti Wall</option>
+<option value=Epic.flf>Epic</option>
+<option value="Fire Font-k.flf">Fire Font-k</option>
+<option value="Fire Font-s.flf">Fire Font-s</option>
+<option value="Flower Power.flf">Flower Power</option>
+<option value="Fun Face.flf">Fun Face</option>
+<option value="Fun Faces.flf">Fun Faces</option>
+<option value=Ghost.flf>Ghost</option>
+<option value=Graceful.flf>Graceful</option>
+<option value=Graffiti.flf>Graffiti</option>
+<option value=Impossible.flf>Impossible</option>
+<option value=Isometric1.flf>Isometric1<option value=Isometric2.flf>Isometric2<option value=Isometric3.flf>Isometric3<option value=Isometric4.flf>Isometric4</option>
+<option value="JS Bracket Letters.flf">JS Bracket Letters</option>
+<option value="Lil Devil.flf">Lil Devil</option>
+<option value=Merlin1.flf>Merlin1</option>
+<option value=Modular.flf>Modular</option>
+<option value=Ogre.flf>Ogre</option>
+<option value="Patorjk's Cheese.flf">Patorjk's Cheese</option>
+<option value=Patorjk-HeX.flf>Patorjk-HeX</option>
+<option value=Rectangles.flf>Rectangles</option>
+<option value=RubiFont.flf>RubiFont</option>
+<option value="Shaded Blocky.flf">Shaded Blocky</option>
+<option value=Slant.flf>Slant</option>
+<option value="Slant Relief.flf" selected>Slant Relief</option>
+<option value=Small.flf>Small</option>
+<option value="Small Slant.flf">Small Slant</option>
+<option value="Small Isometric1.flf">Small Isometric1</option>
+<option value=Soft.flf>Soft</option>
+<option value=Standard.flf>Standard</option>
+<option value="Star Wars.flf">Star Wars</option>
+<option value=Sub-Zero.flf>Sub-Zero</option>
+<option value="Swamp Land.flf">Swamp Land</option>
+<option value=Sweet.flf>Sweet</option>
+<option value=tmplr.flf>Tmplr</option>
+<option value=Train.flf>Train</option>
+<option value=Twisted.flf>Twisted</option>
+<option value="Wet Letter.flf">Wet Letter</option>
+<option value=Varsity.flf>Varsity</option>
+</optgroup>
+<optgroup label="ANSI FIGlet Fonts">
+<option value=3D-ASCII.flf>3D-ASCII</option>
+<option value="ANSI Regular.flf">ANSI Regular</option>
+<option value="ANSI Shadow.flf">ANSI Shadow</option>
+<option value=Bloody.flf>Bloody</option>
+<option value="Calvin S.flf">Calvin S</option>
+<option value="Delta Corps Priest 1.flf">Delta Corps Priest 1</option>
+<option value=Electronic.flf>Electronic</option>
+<option value=Elite.flf>Elite</option>
+<option value="Stronger Than All.flf">Stronger Than All</option>
+<option value=THIS.flf>THIS</option>
+<option value="The Edge.flf">The Edge</option>
+</optgroup>
+<optgroup label="Regular FIGlet Fonts">
+<option value=1Row.flf>1Row<option value=3-D.flf>3-D<option value=3x5.flf>3x5</option>
+<option value=4Max.flf>4Max<option value="5 Line Oblique.flf">5 Line Oblique<option value="AMC 3 Line.flf">AMC 3 Line<option value="AMC 3 Liv1.flf">AMC 3 Liv1</option>
+<option value="AMC AAA01.flf">AMC AAA01<option value="AMC Neko.flf">AMC Neko<option value="AMC Razor.flf">AMC Razor</option>
+<option value="AMC Razor2.flf">AMC Razor2<option value="AMC Slash.flf">AMC Slash<option value="AMC Slider.flf">AMC Slider</option>
+<option value="AMC Thin.flf">AMC Thin<option value="AMC Tubes.flf">AMC Tubes<option value="AMC Untitled.flf">AMC Untitled</option>
+<option value="ASCII New Roman.flf">ASCII New Roman<option value=Alligator.flf>Alligator</option>
+<option value=Alligator2.flf>Alligator2<option value=Alphabet.flf>Alphabet<option value=Arrows.flf>Arrows</option>
+<option value=Banner.flf>Banner<option value=Banner3-D.flf>Banner3-D</option>
+<option value=Banner3.flf>Banner3<option value=Banner4.flf>Banner4<option value=Barbwire.flf>Barbwire<option value=Basic.flf>Basic</option>
+<option value=Bear.flf>Bear<option value=Bell.flf>Bell<option value=Benjamin.flf>Benjamin<option value="Big Chief.flf">Big Chief</option>
+<option value=Bigfig.flf>Bigfig<option value=Binary.flf>Binary</option>
+<option value=Block.flf>Block<option value=Bolger.flf>Bolger<option value=Braced.flf>Braced</option>
+<option value=Bright.flf>Bright<option value="Broadway KB.flf">Broadway KB<option value=Broadway.flf>Broadway<option value=Bubble.flf>Bubble</option>
+<option value=Caligraphy.flf>Caligraphy<option value=Caligraphy2.flf>Caligraphy2</option>
+<option value=Catwalk.flf>Catwalk<option value=Chunky.flf>Chunky<option value=Coinstak.flf>Coinstak</option>
+<option value=Cola.flf>Cola<option value=Colossal.flf>Colossal<option value=Computer.flf>Computer<option value=Contessa.flf>Contessa</option>
+<option value=Contrast.flf>Contrast<option value=Cosmike.flf>Cosmike<option value=Cosmike2.flf>Cosmike (extended)<option value=Crawford.flf>Crawford</option>
+<option value=Cricket.flf>Cricket<option value=Cursive.flf>Cursive<option value=Cyberlarge.flf>Cyberlarge</option>
+<option value=Cybermedium.flf>Cybermedium<option value=Cybersmall.flf>Cybersmall<option value=Cygnet.flf>Cygnet<option value=DANC4.flf>DANC4</option>
+<option value=DWhistled.flf>DWhistled</option>
+<option value=Decimal.flf>Decimal<option value="Def Leppard.flf">Def Leppard<option value=Diamond.flf>Diamond<option value="Diet Cola.flf">Diet Cola</option>
+<option value=Digital.flf>Digital<option value="Dot Matrix.flf">Dot Matrix</option>
+<option value="Double Shorts.flf">Double Shorts<option value=Double.flf>Double<option value="Dr Pepper.flf">Dr Pepper<option value="Efti Chess.flf">Efti Chess</option>
+<option value="Efti Font.flf">Efti Font<option value="Efti Italic.flf">Efti Italic<option value="Efti Piti.flf">Efti Piti<option value="Efti Robot.flf">Efti Robot</option>
+<option value="Efti Water.flf">Efti Water<option value=Fender.flf>Fender</option>
+<option value=Filter.flf>Filter<option value=Flipped.flf>Flipped</option>
+<option value="Four Tops.flf">Four Tops<option value=Fraktur.flf>Fraktur</option>
+<option value=Fuzzy.flf>Fuzzy<option value=Georgi16.flf>Georgi16<option value=Georgia11.flf>Georgia11</option>
+<option value=Ghoulish.flf>Ghoulish<option value=Glenyn.flf>Glenyn<option value=Goofy.flf>Goofy</option>
+<option value=Gothic.flf>Gothic<option value=Gradient.flf>Gradient</option>
+<option value=Greek.flf>Greek<option value="Heart Left.flf">Heart Left<option value="Heart Right.flf">Heart Right<option value="Henry 3D.flf">Henry 3D</option>
+<option value=Hex.flf>Hex<option value=Hieroglyphs.flf>Hieroglyphs<option value=Hollywood.flf>Hollywood<option value="Horizontal Left.flf">Horizontal Left</option>
+<option value="Horizontal Right.flf">Horizontal Right<option value=ICL-1900.flf>ICL-1900<option value=Invita.flf>Invita</option>
+<option value=Italic.flf>Italic<option value=Ivrit.flf>Ivrit<option value="JS Block Letters.flf">JS Block Letters</option>
+<option value="JS Capital Curves.flf">JS Capital Curves<option value="JS Cursive.flf">JS Cursive<option value="JS Stick Letters.flf">JS Stick Letters</option>
+<option value=Jacky.flf>Jacky<option value=Jazmine.flf>Jazmine<option value=Jerusalem.flf>Jerusalem<option value=Katakana.flf>Katakana</option>
+<option value=Kban.flf>Kban<option value=Keyboard.flf>Keyboard<option value=Knob.flf>Knob</option>
+<option value=LCD.flf>LCD<option value="Larry 3D.flf">Larry 3D<option value=Lean.flf>Lean</option>
+<option value=Letters.flf>Letters<option value="Line Blocks.flf">Line Blocks<option value=Linux.flf>Linux</option>
+<option value=Lockergnome.flf>Lockergnome<option value=Madrid.flf>Madrid<option value=Marquee.flf>Marquee</option>
+<option value=Maxfour.flf>Maxfour<option value=Merlin2.flf>Merlin2<option value=Mike.flf>Mike</option>
+<option value=Mini.flf>Mini<option value=Mirror.flf>Mirror<option value=Mnemonic.flf>Mnemonic</option>
+<option value=Morse.flf>Morse<option value=Moscow.flf>Moscow<option value=Mshebrew210.flf>Mshebrew210</option>
+<option value=Muzzle.flf>Muzzle<option value=NScript.flf>NScript<option value="NT Greek.flf">NT Greek<option value="NV Script.flf">NV Script</option>
+<option value=Nancyj-Fancy.flf>Nancyj-Fancy<option value=Nancyj-Underlined.flf>Nancyj-Underlined</option>
+<option value=Nancyj.flf>Nancyj<option value=Nipples.flf>Nipples<option value=O8.flf>O8<option value=OS2.flf>OS2</option>
+<option value=Octal.flf>Octal<option value="Old Banner.flf">Old Banner<option value=Pawp.flf>Pawp</option>
+<option value="Peaks Slant.flf">Peaks Slant<option value=Peaks.flf>Peaks<option value=Pebbles.flf>Pebbles<option value=Pepper.flf>Pepper</option>
+<option value=Poison.flf>Poison<option value=Puffy.flf>Puffy<option value=Puzzle.flf>Puzzle<option value=Pyramid.flf>Pyramid</option>
+<option value=Rammstein.flf>Rammstein</option>
+<option value=Relief.flf>Relief<option value=Relief2.flf>Relief2<option value=Reverse.flf>Reverse<option value=Roman.flf>Roman</option>
+<option value=Rotated.flf>Rotated<option value=Rounded.flf>Rounded<option value="Rowan Cap.flf">Rowan Cap</option>
+<option value=Rozzo.flf>Rozzo<option value=Runic.flf>Runic<option value=Runyc.flf>Runyc<option value="S Blood.flf">S Blood</option>
+<option value="SL Script.flf">SL Script<option value="Santa Clara.flf">Santa Clara<option value=Script.flf>Script<option value=Serifcap.flf>Serifcap</option>
+<option value=Shadow.flf>Shadow<option value=Shimrod.flf>Shimrod<option value=Short.flf>Short</option>
+<option value=Slide.flf>Slide<option value="Small Caps.flf">Small Caps</option>
+<option value="Small Keyboard.flf">Small Keyboard<option value="Small Poison.flf">Small Poison<option value="Small Script.flf">Small Script</option>
+<option value="Small Shadow.flf">Small Shadow<option value="Small Tengwar.flf">Small Tengwar</option>
+<option value=Speed.flf>Speed<option value=Spliff.flf>Spliff</option>
+<option value=Stacey.flf>Stacey<option value=Stampate.flf>Stampate<option value=Stampatello.flf>Stampatello</option>
+<option value="Star Strips.flf">Star Strips<option value=Stellar.flf>Stellar<option value=Stforek.flf>Stforek</option>
+<option value="Stick Letters.flf">Stick Letters<option value=Stop.flf>Stop<option value=Straight.flf>Straight</option>
+<option value=Swan.flf>Swan<option value=Tanja.flf>Tanja</option>
+<option value=Tengwar.flf>Tengwar<option value=Term.flf>Term<option value=Test1.flf>Test1<option value=Thick.flf>Thick</option>
+<option value=Thin.flf>Thin<option value=Thorned.flf>Thorned<option value="Three Point.flf">Three Point<option value="Ticks Slant.flf">Ticks Slant</option>
+<option value=Ticks.flf>Ticks<option value=Tiles.flf>Tiles<option value=Tinker-Toy.flf>Tinker-Toy<option value=Tombstone.flf>Tombstone</option>
+<option value=Trek.flf>Trek<option value=Tsalagi.flf>Tsalagi<option value=Tubular.flf>Tubular</option>
+<option value="Two Point.flf">Two Point<option value="USA Flag.flf">USA Flag<option value=Univers.flf>Univers</option>
+<option value=Wavy.flf>Wavy<option value=Weird.flf>Weird</option>
+<option value=Whimsy.flf>Whimsy<option value=Wow.flf>Wow</option>
+</optgroup>
+<optgroup label="AOL Macro Fonts">
+<option value=Abraxis-Big.aol>Abraxis-Big<option value=Abraxis-Small.aol>Abraxis-Small<option value=Bent.aol>Bent<option value=Blest.aol>Blest<option value=Boie.aol>Boie<option value=Boie2.aol>Boie2<option value="Bone's Font.aol">Bone's Font<option value=CaMiZ.aol>CaMiZ<option value=CeA.aol>CeA<option value=CeA2.aol>CeA2<option value=Cheese.aol>Cheese<option value=DaiR.aol>DaiR<option value=Filth.aol>Filth<option value=FoGG.aol>FoGG<option value=Galactus.aol>Galactus<option value=Glue.aol>Glue<option value="HeX's Font.aol">HeX's Font<option value=Hellfire.aol>Hellfire<option value=MeDi.aol>MeDi<option value=Mer.aol>Mer<option value=PsY.aol>PsY<option value=PsY2.aol>PsY2<option value="Reeko Font 1.aol">Reeko Font 1<option value=Ribbit.aol>Ribbit<option value=Ribbit2.aol>Ribbit2<option value=Ribbit3.aol>Ribbit3<option value=Sony.aol>Sony<option value="TRaC Mini.aol">TRaC Mini<option value="TRaC Tiny.aol">TRaC Tiny<option value="TRaC's Old School Font.aol">TRaC's Old School Font<option value=TRaC.aol>TRaC<option value=Twiggy.aol>Twiggy<option value=X-Pose.aol>X-Pose<option value=X99.aol>X99<option value=X992.aol>X992<option value=Zodi.aol>Zodi</option>
+</optgroup>
+ </select>
+ </tr>
+ <tr class="phone-hide sf-hidden"></tr>
+ 
+ <tr class="phone-hide sf-hidden"></tr>
+ 
+ <tr><td>
+ <button id=btnTestAll>Test All</button>
+ <button id=btnMoreOptions class="phone-hide sf-hidden">More Opts</button>
+ <button id=btnAbout>About</button>
+ </tr>
+ </table>
+ </td>
+ 
+ <td class=controlCells>
+ <div class=controlRowRight>
+ <textarea id=inputText style=width:234px>Hankerz</textarea>
+ </div>
+ <div style=width:238px;height:64px;background-color:transparent;--darkreader-inline-bgcolor:transparent data-darkreader-inline-bgcolor>
+ </div>
+ 
+ </td>
+ </tbody>
+ </table>
+</td>
+<td class="layoutGridStyle extra-blocks sf-hidden">
+ 
+</td>
+<td class="layoutGridStyle extra-blocks sf-hidden">
+ 
+</td>
+</table> 
+ </div> 
+ <div id=footer>
+ <div id=footer-buttons>
+ <div class=footerDiv>
+ <button id=btnShare><img alt class="footerImg phone-hide sf-hidden" src=data:, width=30 height=30>Share Link</button>
+ </div>
+ <div id=footer-text-specific style=display:none>
+ 
+ 
+ 
+ </div>
+ <div class="footerDiv footer-logo">
+ <a href=http://patorjk.com/><img alt class="footerImg phone-hide sf-hidden" src=data:, width=30 height=30><span>patorjk.com</span></a>
+ </div>
+ </div>
+ </div>
+ <div id=maincontent>
+ <div id=outputFigDisplay><div id=taagTestAll style=width:100%><pre style=text-align:center class=fig>  *   )           )                   (    (  (   
+` )  /(  (     ( /((        (  (      )\   )\ )\  
+ ( )(_))))\(   )\())\  (    )\))(  ((((_)(((_)(_) 
+(_(_())/((_)\ (_))((_) )\ )((_))\   )\ _ )\)_()_) 
+|_   _(_))((_)| |_ (_)_(_/( (()(_)  (_)_\(_) || | 
+  | | / -_|_-&lt;|  _|| | ' \)) _` |    / _ \ | || | 
+  |_| \___/__/ \__||_|_||_|\__, |   /_/ \_\|_||_| 
+                           |___/                  </pre><ins class="adsbygoogle sf-hidden" style=display:block data-ad-client=ca-pub-0613074263309085 data-ad-slot=3827566111 data-ad-format=auto data-full-width-responsive=true></ins><div style=text-align:center id=taagTestAllListLoaded>Loaded: 99 of 323</div><p><div id=taagTestAllCancelDiv style=text-align:center><button id=taagTestAllCancel>Cancel</button></div><p><div style=text-align:center>Sort order: Popular FIGlet fonts, Regular FIGlet fonts, AOL fonts</div><p><p><br><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_3DDiagonal style=float:left class=fig contenteditable=true>                                                                               
+        ,--,                                                                   
+      ,--.'|                              ,-.                                  
+   ,--,  | :                          ,--/ /|                                  
+,---.'|  : '                  ,---, ,--. :/ |             __  ,-.       ,----, 
+|   | : _' |              ,-+-. /  |:  : ' /            ,' ,'/ /|     .'   .`| 
+:   : |.'  |  ,--.--.    ,--.'|'   ||  '  /      ,---.  '  | |' |  .'   .'  .' 
+|   ' '  ; : /       \  |   |  ,"' |'  |  :     /     \ |  |   ,',---, '   ./  
+'   |  .'. |.--.  .-. | |   | /  | ||  |   \   /    /  |'  :  /  ;   | .'  /   
+|   | :  | ' \__\/: . . |   | |  | |'  : |. \ .    ' / ||  | '   `---' /  ;--, 
+'   : |  : ; ," .--.; | |   | |  |/ |  | ' \ \'   ;   /|;  : |     /  /  / .`| 
+|   | '  ,/ /  /  ,.  | |   | |--'  '  : |--' '   |  / ||  , ;   ./__;     .'  
+;   : ;--' ;  :   .'   \|   |/      ;  |,'    |   :    | ---'    ;   |  .'     
+|   ,/     |  ,     .-./'---'       '--'       \   \  /          `---'         
+'---'       `--`---'                            `----'                         
+                                                                               </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: 3D Diagonal</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Alpha style=float:left class=fig contenteditable=true>          _____                    _____                    _____                    _____                    _____                    _____                    _____          
+         /\    \                  /\    \                  /\    \                  /\    \                  /\    \                  /\    \                  /\    \         
+        /::\____\                /::\    \                /::\____\                /::\____\                /::\    \                /::\    \                /::\    \        
+       /:::/    /               /::::\    \              /::::|   |               /:::/    /               /::::\    \              /::::\    \               \:::\    \       
+      /:::/    /               /::::::\    \            /:::::|   |              /:::/    /               /::::::\    \            /::::::\    \               \:::\    \      
+     /:::/    /               /:::/\:::\    \          /::::::|   |             /:::/    /               /:::/\:::\    \          /:::/\:::\    \               \:::\    \     
+    /:::/____/               /:::/__\:::\    \        /:::/|::|   |            /:::/____/               /:::/__\:::\    \        /:::/__\:::\    \               \:::\    \    
+   /::::\    \              /::::\   \:::\    \      /:::/ |::|   |           /::::\    \              /::::\   \:::\    \      /::::\   \:::\    \               \:::\    \   
+  /::::::\    \   _____    /::::::\   \:::\    \    /:::/  |::|   | _____    /::::::\____\________    /::::::\   \:::\    \    /::::::\   \:::\    \               \:::\    \  
+ /:::/\:::\    \ /\    \  /:::/\:::\   \:::\    \  /:::/   |::|   |/\    \  /:::/\:::::::::::\    \  /:::/\:::\   \:::\    \  /:::/\:::\   \:::\____\               \:::\    \ 
+/:::/  \:::\    /::\____\/:::/  \:::\   \:::\____\/:: /    |::|   /::\____\/:::/  |:::::::::::\____\/:::/__\:::\   \:::\____\/:::/  \:::\   \:::|    |_______________\:::\____\
+\::/    \:::\  /:::/    /\::/    \:::\  /:::/    /\::/    /|::|  /:::/    /\::/   |::|~~~|~~~~~     \:::\   \:::\   \::/    /\::/   |::::\  /:::|____|\::::::::::::::::::/    /
+ \/____/ \:::\/:::/    /  \/____/ \:::\/:::/    /  \/____/ |::| /:::/    /  \/____|::|   |           \:::\   \:::\   \/____/  \/____|:::::\/:::/    /  \::::::::::::::::/____/ 
+          \::::::/    /            \::::::/    /           |::|/:::/    /         |::|   |            \:::\   \:::\    \            |:::::::::/    /    \:::\~~~~\~~~~~~       
+           \::::/    /              \::::/    /            |::::::/    /          |::|   |             \:::\   \:::\____\           |::|\::::/    /      \:::\    \            
+           /:::/    /               /:::/    /             |:::::/    /           |::|   |              \:::\   \::/    /           |::| \::/____/        \:::\    \           
+          /:::/    /               /:::/    /              |::::/    /            |::|   |               \:::\   \/____/            |::|  ~|               \:::\    \          
+         /:::/    /               /:::/    /               /:::/    /             |::|   |                \:::\    \                |::|   |                \:::\    \         
+        /:::/    /               /:::/    /               /:::/    /              \::|   |                 \:::\____\               \::|   |                 \:::\____\        
+        \::/    /                \::/    /                \::/    /                \:|   |                  \::/    /                \:|   |                  \::/    /        
+         \/____/                  \/____/                  \/____/                  \|___|                   \/____/                  \|___|                   \/____/         
+                                                                                                                                                                               </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Alpha</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Acrobatic style=float:left class=fig contenteditable=true>  o         o                            o                                     
+ &lt;|&gt;       &lt;|&gt;                          &lt;|&gt;                                    
+ &lt; &gt;       &lt; &gt;                          / \                                    
+  |         |      o__ __o/  \o__ __o   \o/  o/  o__  __o   \o__ __o   _\o____ 
+  o__/_ _\__o     /v     |    |     |&gt;   |  /v  /v      |&gt;   |     |&gt;      /   
+  |         |    /&gt;     / \  / \   / \  / \/&gt;  /&gt;      //   / \   &lt; &gt;    o/    
+ &lt;o&gt;       &lt;o&gt;   \      \o/  \o/   \o/  \o/\o  \o    o/     \o/         /v     
+  |         |     o      |    |     |    |  v\  v\  /v __o   |         /&gt;      
+ / \       / \    &lt;\__  / \  / \   / \  / \  &lt;\  &lt;\/&gt; __/&gt;  / \        \&gt;__o__ 
+                                                                            \  
+                                                                               
+                                                                               </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Acrobatic</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Avatar style=float:left class=fig contenteditable=true> _     ____  _      _  __ _____ ____  ____ 
+/ \ /|/  _ \/ \  /|/ |/ //  __//  __\/_   \
+| |_||| / \|| |\ |||   / |  \  |  \/| /   /
+| | ||| |-||| | \|||   \ |  /_ |    //   /_
+\_/ \|\_/ \|\_/  \|\_|\_\\____\\_/\_\\____/
+                                           </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Avatar</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_babyfacelame style=float:left class=fig contenteditable=true>   _______   ________  ________  ____ ___  ________  ________  ________ 
+  /    /  \\/        \/    /   \/    /   \/        \/        \/        \
+ /        //         /         /         /         /         /-        /
+/         /         /         /        _/        _/        _/        _/ 
+\___/____/\___/____/\__/_____/\____/___/\________/\____/___/\________/  </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: babyface-lame</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_babyfaceleet style=float:left class=fig contenteditable=true>   _______   ________  ________  ____ ___  ________  ________  ________ 
+  ╱    ╱  ╲╲╱        ╲╱    ╱   ╲╱    ╱   ╲╱        ╲╱        ╲╱        ╲
+ ╱        ╱╱         ╱         ╱         ╱         ╱         ╱-        ╱
+╱         ╱         ╱         ╱        _╱        _╱        _╱        _╱ 
+╲___╱____╱╲___╱____╱╲__╱_____╱╲____╱___╱╲________╱╲____╱___╱╲________╱  </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: babyface-leet</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_BigMoneyne style=float:left class=fig contenteditable=true> /$$   /$$                     /$$                                    
+| $$  | $$                    | $$                                    
+| $$  | $$  /$$$$$$  /$$$$$$$ | $$   /$$  /$$$$$$   /$$$$$$  /$$$$$$$$
+| $$$$$$$$ |____  $$| $$__  $$| $$  /$$/ /$$__  $$ /$$__  $$|____ /$$/
+| $$__  $$  /$$$$$$$| $$  \ $$| $$$$$$/ | $$$$$$$$| $$  \__/   /$$$$/ 
+| $$  | $$ /$$__  $$| $$  | $$| $$_  $$ | $$_____/| $$        /$$__/  
+| $$  | $$|  $$$$$$$| $$  | $$| $$ \  $$|  $$$$$$$| $$       /$$$$$$$$
+|__/  |__/ \_______/|__/  |__/|__/  \__/ \_______/|__/      |________/
+                                                                      
+                                                                      
+                                                                      </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Big Money-ne</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_BigMoneynw style=float:left class=fig contenteditable=true>$$\   $$\                     $$\                                    
+$$ |  $$ |                    $$ |                                   
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\  $$$$$$\   $$$$$$\ $$$$$$$$\ 
+$$$$$$$$ | \____$$\ $$  __$$\ $$ | $$  |$$  __$$\ $$  __$$\\____$$  |
+$$  __$$ | $$$$$$$ |$$ |  $$ |$$$$$$  / $$$$$$$$ |$$ |  \__| $$$$ _/ 
+$$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$&lt;  $$   ____|$$ |      $$  _/   
+$$ |  $$ |\$$$$$$$ |$$ |  $$ |$$ | \$$\ \$$$$$$$\ $$ |     $$$$$$$$\ 
+\__|  \__| \_______|\__|  \__|\__|  \__| \_______|\__|     \________|
+                                                                     
+                                                                     
+                                                                     </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Big Money-nw</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_BigMoneyse style=float:left class=fig contenteditable=true> __    __                      __                                    
+|  \  |  \                    |  \                                   
+| $$  | $$  ______   _______  | $$   __   ______    ______  ________ 
+| $$__| $$ |      \ |       \ | $$  /  \ /      \  /      \|        \
+| $$    $$  \$$$$$$\| $$$$$$$\| $$_/  $$|  $$$$$$\|  $$$$$$\\$$$$$$$$
+| $$$$$$$$ /      $$| $$  | $$| $$   $$ | $$    $$| $$   \$$ /    $$ 
+| $$  | $$|  $$$$$$$| $$  | $$| $$$$$$\ | $$$$$$$$| $$      /  $$$$_ 
+| $$  | $$ \$$    $$| $$  | $$| $$  \$$\ \$$     \| $$     |  $$    \
+ \$$   \$$  \$$$$$$$ \$$   \$$ \$$   \$$  \$$$$$$$ \$$      \$$$$$$$$
+                                                                     
+                                                                     
+                                                                     </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Big Money-se</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_BigMoneysw style=float:left class=fig contenteditable=true> __    __                      __                                     
+/  |  /  |                    /  |                                    
+$$ |  $$ |  ______   _______  $$ |   __   ______    ______   ________ 
+$$ |__$$ | /      \ /       \ $$ |  /  | /      \  /      \ /        |
+$$    $$ | $$$$$$  |$$$$$$$  |$$ |_/$$/ /$$$$$$  |/$$$$$$  |$$$$$$$$/ 
+$$$$$$$$ | /    $$ |$$ |  $$ |$$   $$&lt;  $$    $$ |$$ |  $$/   /  $$/  
+$$ |  $$ |/$$$$$$$ |$$ |  $$ |$$$$$$  \ $$$$$$$$/ $$ |       /$$$$/__ 
+$$ |  $$ |$$    $$ |$$ |  $$ |$$ | $$  |$$       |$$ |      /$$      |
+$$/   $$/  $$$$$$$/ $$/   $$/ $$/   $$/  $$$$$$$/ $$/       $$$$$$$$/ 
+                                                                      
+                                                                      
+                                                                      </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Big Money-sw</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Big style=float:left class=fig contenteditable=true>  _    _             _                 
+ | |  | |           | |                
+ | |__| | __ _ _ __ | | _____ _ __ ____
+ |  __  |/ _` | '_ \| |/ / _ \ '__|_  /
+ | |  | | (_| | | | |   &lt;  __/ |   / / 
+ |_|  |_|\__,_|_| |_|_|\_\___|_|  /___|
+                                       
+                                       </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Big</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Blocks style=float:left class=fig contenteditable=true> .----------------.  .----------------.  .-----------------. .----------------.  .----------------.  .----------------.  .----------------. 
+| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
+| |  ____  ____  | || |      __      | || | ____  _____  | || |  ___  ____   | || |  _________   | || |  _______     | || |   ________   | |
+| | |_   ||   _| | || |     /  \     | || ||_   \|_   _| | || | |_  ||_  _|  | || | |_   ___  |  | || | |_   __ \    | || |  |  __   _|  | |
+| |   | |__| |   | || |    / /\ \    | || |  |   \ | |   | || |   | |_/ /    | || |   | |_  \_|  | || |   | |__) |   | || |  |_/  / /    | |
+| |   |  __  |   | || |   / ____ \   | || |  | |\ \| |   | || |   |  __'.    | || |   |  _|  _   | || |   |  __ /    | || |     .'.' _   | |
+| |  _| |  | |_  | || | _/ /    \ \_ | || | _| |_\   |_  | || |  _| |  \ \_  | || |  _| |___/ |  | || |  _| |  \ \_  | || |   _/ /__/ |  | |
+| | |____||____| | || ||____|  |____|| || ||_____|\____| | || | |____||____| | || | |_________|  | || | |____| |___| | || |  |________|  | |
+| |              | || |              | || |              | || |              | || |              | || |              | || |              | |
+| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
+ '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Blocks</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_BlurVisionASCII style=float:left class=fig contenteditable=true>░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░    ░▒▓██▓▒░  
+░▒▓████████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓██████▓▒░ ░▒▓███████▓▒░   ░▒▓██▓▒░    
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓██▓▒░      
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░ 
+                                                                                             
+                                                                                             </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: BlurVision ASCII</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Bulbhead style=float:left class=fig contenteditable=true> _   _    __    _  _  _  _  ____  ____  ____ 
+( )_( )  /__\  ( \( )( )/ )( ___)(  _ \(_   )
+ ) _ (  /(__)\  )  (  )  (  )__)  )   / / /_ 
+(_) (_)(__)(__)(_)\_)(_)\_)(____)(_)\_)(____)</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Bulbhead</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Cards style=float:left class=fig contenteditable=true>.------..------..------..------..------..------..------.
+|H.--. ||A.--. ||N.--. ||K.--. ||E.--. ||R.--. ||Z.--. |
+| :/\: || (\/) || :(): || :/\: || (\/) || :(): || :(): |
+| (__) || :\/: || ()() || :\/: || :\/: || ()() || ()() |
+| '--'H|| '--'A|| '--'N|| '--'K|| '--'E|| '--'R|| '--'Z|
+`------'`------'`------'`------'`------'`------'`------'</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Cards</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Chiseled style=float:left class=fig contenteditable=true> ,--.-,,-,--,   ,---.      .-._        ,--.-.,-.      ,----.                         
+/==/  /|=|  | .--.'  \    /==/ \  .-._/==/- |\  \  ,-.--` , \  .-.,.---.   ,--,----. 
+|==|_ ||=|, | \==\-/\ \   |==|, \/ /, /==|_ `/_ / |==|-  _.-` /==/  `   \ /==/` - ./ 
+|==| ,|/=| _| /==/-|_\ |  |==|-  \|  ||==| ,   /  |==|   `.-.|==|-, .=., |`--`=/. /  
+|==|- `-' _ | \==\,   - \ |==| ,  | -||==|-  .|  /==/_ ,    /|==|   '='  / /==/- /   
+|==|  _     | /==/ -   ,| |==| -   _ ||==| _ , \ |==|    .-' |==|- ,   .' /==/- /-.  
+|==|   .-. ,\/==/-  /\ - \|==|  /\ , |/==/  '\  ||==|_  ,`-._|==|_  . ,'./==/, `--`\ 
+/==/, //=/  |\==\ _.\=\.-'/==/, | |- |\==\ /\=\.'/==/ ,     //==/  /\ ,  )==\-  -, | 
+`--`-' `-`--` `--`        `--`./  `--` `--`      `--`-----`` `--`-`--`--' `--`.-.--` </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Chiseled</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Crawford2 style=float:left class=fig contenteditable=true> __ __   ____  ____   __  _    ___  ____   _____ 
+|  |  | /    ||    \ |  |/ ]  /  _]|    \ |     |
+|  |  ||  o  ||  _  ||  ' /  /  [_ |  D  )|__/  |
+|  _  ||     ||  |  ||    \ |    _]|    / |   __|
+|  |  ||  _  ||  |  ||     \|   [_ |    \ |  /  |
+|  |  ||  |  ||  |  ||  .  ||     ||  .  \|     |
+|__|__||__|__||__|__||__|\_||_____||__|\_||_____|
+                                                 </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Crawford2</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Crazy style=float:left class=fig contenteditable=true>                                                                                     
+                                                                                     
+   .                      _..._        .           __.....__                         
+ .'|                    .'     '.    .'|       .-''         '.                       
+&lt;  |                   .   .-.   . .'  |      /     .-''"'-.  `. .-,.--.             
+ | |             __    |  '   '  |&lt;    |     /     /________\   \|  .-. |            
+ | | .'''-.   .:--.'.  |  |   |  | |   | ____|                  || |  | |.--------.  
+ | |/.'''. \ / |   \ | |  |   |  | |   | \ .'\    .-------------'| |  | ||____    |  
+ |  /    | | `" __ | | |  |   |  | |   |/  .  \    '-.____...---.| |  '-     /   /   
+ | |     | |  .'.''| | |  |   |  | |    /\  \  `.             .' | |       .'   /    
+ | |     | | / /   | |_|  |   |  | |   |  \  \   `''-...... -'   | |      /    /___  
+ | '.    | '.\ \._,\ '/|  |   |  | '    \  \  \                  |_|     |         | 
+ '---'   '---'`--'  `" '--'   '--''------'  '---'                        |_________| </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Crazy</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_DancingFont style=float:left class=fig contenteditable=true>  _   _      _      _   _       _  __  U _____ u   ____      _____  
+ |'| |'| U  /"\  u | \ |"|     |"|/ /  \| ___"|/U |  _"\ u  |"_  /u 
+/| |_| |\ \/ _ \/ &lt;|  \| |&gt;    | ' /    |  _|"   \| |_) |/  U / //  
+U|  _  |u / ___ \ U| |\  |u  U/| . \\u  | |___    |  _ &lt;    \/ /_   
+ |_| |_| /_/   \_\ |_| \_|     |_|\_\   |_____|   |_| \_\   /____|  
+ //   \\  \\    &gt;&gt; ||   \\,-.,-,&gt;&gt; \\,-.&lt;&lt;   &gt;&gt;   //   \\_  _//&lt;&lt;,- 
+(_") ("_)(__)  (__)(_")  (_/  \.)   (_/(__) (__) (__)  (__)(__) (_/ </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Dancing Font</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_DiamFont style=float:left class=fig contenteditable=true>▗▖ ▗▖▗▞▀▜▌▄▄▄▄  █  ▄ ▗▞▀▚▖ ▄▄▄ ▄▄▄▄▄ 
+▐▌ ▐▌▝▚▄▟▌█   █ █▄▀  ▐▛▀▀▘█     ▄▄▄▀ 
+▐▛▀▜▌     █   █ █ ▀▄ ▝▚▄▄▖█    █▄▄▄▄ 
+▐▌ ▐▌           █  █                 
+                                     
+                                     
+                                     </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: DiamFont</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Doh style=float:left class=fig contenteditable=true>                                                                                                                                   
+                                                                                                                                   
+HHHHHHHHH     HHHHHHHHH                                   kkkkkkkk                                                                 
+H:::::::H     H:::::::H                                   k::::::k                                                                 
+H:::::::H     H:::::::H                                   k::::::k                                                                 
+HH::::::H     H::::::HH                                   k::::::k                                                                 
+  H:::::H     H:::::H    aaaaaaaaaaaaa  nnnn  nnnnnnnn     k:::::k    kkkkkkk eeeeeeeeeeee    rrrrr   rrrrrrrrr   zzzzzzzzzzzzzzzzz
+  H:::::H     H:::::H    a::::::::::::a n:::nn::::::::nn   k:::::k   k:::::kee::::::::::::ee  r::::rrr:::::::::r  z:::::::::::::::z
+  H::::::HHHHH::::::H    aaaaaaaaa:::::an::::::::::::::nn  k:::::k  k:::::ke::::::eeeee:::::eer:::::::::::::::::r z::::::::::::::z 
+  H:::::::::::::::::H             a::::ann:::::::::::::::n k:::::k k:::::ke::::::e     e:::::err::::::rrrrr::::::rzzzzzzzz::::::z  
+  H:::::::::::::::::H      aaaaaaa:::::a  n:::::nnnn:::::n k::::::k:::::k e:::::::eeeee::::::e r:::::r     r:::::r      z::::::z   
+  H::::::HHHHH::::::H    aa::::::::::::a  n::::n    n::::n k:::::::::::k  e:::::::::::::::::e  r:::::r     rrrrrrr     z::::::z    
+  H:::::H     H:::::H   a::::aaaa::::::a  n::::n    n::::n k:::::::::::k  e::::::eeeeeeeeeee   r:::::r                z::::::z     
+  H:::::H     H:::::H  a::::a    a:::::a  n::::n    n::::n k::::::k:::::k e:::::::e            r:::::r               z::::::z      
+HH::::::H     H::::::HHa::::a    a:::::a  n::::n    n::::nk::::::k k:::::ke::::::::e           r:::::r              z::::::zzzzzzzz
+H:::::::H     H:::::::Ha:::::aaaa::::::a  n::::n    n::::nk::::::k  k:::::ke::::::::eeeeeeee   r:::::r             z::::::::::::::z
+H:::::::H     H:::::::H a::::::::::aa:::a n::::n    n::::nk::::::k   k:::::kee:::::::::::::e   r:::::r            z:::::::::::::::z
+HHHHHHHHH     HHHHHHHHH  aaaaaaaaaa  aaaa nnnnnn    nnnnnnkkkkkkkk    kkkkkkk eeeeeeeeeeeeee   rrrrrrr            zzzzzzzzzzzzzzzzz
+                                                                                                                                   
+                                                                                                                                   
+                                                                                                                                   
+                                                                                                                                   
+                                                                                                                                   
+                                                                                                                                   
+                                                                                                                                   </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Doh</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Doom style=float:left class=fig contenteditable=true> _   _             _                 
+| | | |           | |                
+| |_| | __ _ _ __ | | _____ _ __ ____
+|  _  |/ _` | '_ \| |/ / _ \ '__|_  /
+| | | | (_| | | | |   &lt;  __/ |   / / 
+\_| |_/\__,_|_| |_|_|\_\___|_|  /___|
+                                     
+                                     </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Doom</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_EftiWall style=float:left class=fig contenteditable=true>                 |              _   _          ___           |"|           !!!                     
+     ***         |.===.        '\\-//`        /\#/\         _|_|_       `  _ _  '       ((__))     
+    (o o)        {}o o{}        (o o)        /(o o)\        (o o)      -  (OXO)  -       (00)      
+ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-nn--(o__o)--nn-</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Efti Wall</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Epic style=float:left class=fig contenteditable=true>          _______  _        _        _______  _______  _______ 
+|\     /|(  ___  )( (    /|| \    /\(  ____ \(  ____ )/ ___   )
+| )   ( || (   ) ||  \  ( ||  \  / /| (    \/| (    )|\/   )  |
+| (___) || (___) ||   \ | ||  (_/ / | (__    | (____)|    /   )
+|  ___  ||  ___  || (\ \) ||   _ (  |  __)   |     __)   /   / 
+| (   ) || (   ) || | \   ||  ( \ \ | (      | (\ (     /   /  
+| )   ( || )   ( || )  \  ||  /  \ \| (____/\| ) \ \__ /   (_/\
+|/     \||/     \||/    )_)|_/    \/(_______/|/   \__/(_______/
+                                                               </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Epic</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_FireFontk style=float:left class=fig contenteditable=true>    )                                    
+ ( /(                  )                 
+ )\())    )         ( /(    (   (        
+((_)\  ( /(   (     )\())  ))\  )(   (   
+ _((_) )(_))  )\ ) ((_)\  /((_)(()\  )\  
+| || |((_)_  _(_/( | |(_)(_))   ((_)((_) 
+| __ |/ _` || ' \))| / / / -_) | '_||_ / 
+|_||_|\__,_||_||_| |_\_\ \___| |_|  /__| 
+                                         </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Fire Font-k</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_FireFonts style=float:left class=fig contenteditable=true>    )                              
+ ( /(               )              
+ )\())   )       ( /(   (  (       
+((_)\ ( /(  (    )\()) ))\ )(  (   
+ _((_))(_)) )\ )((_)\ /((_|()\ )\  
+| || ((_)_ _(_/(| |(_|_))  ((_|(_) 
+| __ / _` | ' \)) / // -_)| '_|_ / 
+|_||_\__,_|_||_||_\_\\___||_| /__| 
+                                   </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Fire Font-s</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_FlowerPower style=float:left class=fig contenteditable=true>.---.  .---.    ____    ,---.   .--..--.   .--.      .-''-.  .-------.      ____..--' 
+|   |  |_ _|  .'  __ `. |    \  |  ||  | _/  /     .'_ _   \ |  _ _   \    |        | 
+|   |  ( ' ) /   '  \  \|  ,  \ |  || (`' ) /     / ( ` )   '| ( ' )  |    |   .-'  ' 
+|   '-(_{;}_)|___|  /  ||  |\_ \|  ||(_ ()_)     . (_ o _)  ||(_ o _) /    |.-'.'   / 
+|      (_,_)    _.-`   ||  _( )_\  || (_,_)   __ |  (_,_)___|| (_,_).' __     /   _/  
+| _ _--.   | .'   _    || (_ o _)  ||  |\ \  |  |'  \   .---.|  |\ \  |  |  .'._( )_  
+|( ' ) |   | |  _( )_  ||  (_,_)\  ||  | \ `'   / \  `-'    /|  | \ `'   /.'  (_'o._) 
+(_{;}_)|   | \ (_ o _) /|  |    |  ||  |  \    /   \       / |  |  \    / |    (_,_)| 
+'(_,_) '---'  '.(_,_).' '--'    '--'`--'   `'-'     `'-..-'  ''-'   `'-'  |_________| 
+                                                                                      </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Flower Power</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_FunFace style=float:left class=fig contenteditable=true>   \\  //       \\\  ///       _      ))      _oo   
+   (o)(o)   /)  ((O)(O))(OO) .' )wWw (Oo)-.&gt;-(_  \  
+   ||  || (o)(O) | \ ||  ||_/ .' (O)_ | (_))  / _/  
+   |(__)|  //\\  ||\\||  |   /  .' __)|  .'  / /    
+   /.--.\ |(__)| || \ |  ||\ \ (  _)  )|\\  / (     
+  -'    `-/,-. | ||  || (/\)\ `.`.__)(/  \)(   `-.  
+         -'   ''(_/  \_)     `._)     )     `--.._) </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Fun Face</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_FunFaces style=float:left class=fig contenteditable=true>   \\  //       \\\  ///       _ wWw ()_()   _oo   
+   (o)(o)   /)  ((O)(O))(OO) .' )(O)_(O o)&gt;-(_  \  
+   ||  || (o)(O) | \ ||  ||_/ .' / __)|^_\   / _/  
+   |(__)|  //\\  ||\\||  |   /  / (   |(_)) / /    
+   /.--.\ |(__)| || \ |  ||\ \ (  _)  |  / / (     
+  -'    `-/,-. | ||  || (/\)\ `.\ \_  )|\\(   `-.  
+         -'   ''(_/  \_)     `._)\__)(/  \)`--.._) </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Fun Faces</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Ghost style=float:left class=fig contenteditable=true> ('-. .-.   ('-.         .-') _ .-. .-')     ('-.  _  .-')     .-') _  
+( OO )  /  ( OO ).-.    ( OO ) )\  ( OO )  _(  OO)( \( -O )   (  OO) ) 
+,--. ,--.  / . --. /,--./ ,--,' ,--. ,--. (,------.,------. ,(_)----.  
+|  | |  |  | \-.  \ |   \ |  |\ |  .'   /  |  .---'|   /`. '|       |  
+|   .|  |.-'-'  |  ||    \|  | )|      /,  |  |    |  /  | |'--.   /   
+|       | \| |_.'  ||  .     |/ |     ' _)(|  '--. |  |_.' |(_/   /    
+|  .-.  |  |  .-.  ||  |\    |  |  .   \   |  .--' |  .  '.' /   /___  
+|  | |  |  |  | |  ||  | \   |  |  |\   \  |  `---.|  |\  \ |        | 
+`--' `--'  `--' `--'`--'  `--'  `--' '--'  `------'`--' '--'`--------' </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Ghost</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Graceful style=float:left class=fig contenteditable=true> _  _   __   __ _  __ _  ____  ____  ____ 
+/ )( \ / _\ (  ( \(  / )(  __)(  _ \(__  )
+) __ (/    \/    / )  (  ) _)  )   / / _/ 
+\_)(_/\_/\_/\_)__)(__\_)(____)(__\_)(____)</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Graceful</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Graffiti style=float:left class=fig contenteditable=true>  ___ ___                __                        
+ /   |   \_____    ____ |  | __ ___________________
+/    ~    \__  \  /    \|  |/ // __ \_  __ \___   /
+\    Y    // __ \|   |  \    &lt;\  ___/|  | \//    / 
+ \___|_  /(____  /___|  /__|_ \\___  &gt;__|  /_____ \
+       \/      \/     \/     \/    \/            \/</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Graffiti</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Impossible style=float:left class=fig contenteditable=true>         _       _    _                   _             _              _            _            _         
+        / /\    / /\ / /\                /\ \     _    /\_\           /\ \         /\ \        /\ \        
+       / / /   / / // /  \              /  \ \   /\_\ / / /  _       /  \ \       /  \ \      /  \ \       
+      / /_/   / / // / /\ \            / /\ \ \_/ / // / /  /\_\    / /\ \ \     / /\ \ \  __/ /\ \ \      
+     / /\ \__/ / // / /\ \ \          / / /\ \___/ // / /__/ / /   / / /\ \_\   / / /\ \_\/___/ /\ \ \     
+    / /\ \___\/ // / /  \ \ \        / / /  \/____// /\_____/ /   / /_/_ \/_/  / / /_/ / /\___\/ / / /     
+   / / /\/___/ // / /___/ /\ \      / / /    / / // /\_______/   / /____/\    / / /__\/ /       / / /      
+  / / /   / / // / /_____/ /\ \    / / /    / / // / /\ \ \     / /\____\/   / / /_____/       / / /    _  
+ / / /   / / // /_________/\ \ \  / / /    / / // / /  \ \ \   / / /______  / / /\ \ \         \ \ \__/\_\ 
+/ / /   / / // / /_       __\ \_\/ / /    / / // / /    \ \ \ / / /_______\/ / /  \ \ \         \ \___\/ / 
+\/_/    \/_/ \_\___\     /____/_/\/_/     \/_/ \/_/      \_\_\\/__________/\/_/    \_\/          \/___/_/  
+                                                                                                           </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Impossible</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Isometric1 style=float:left class=fig contenteditable=true>      ___           ___           ___           ___           ___           ___           ___     
+     /\__\         /\  \         /\__\         /\__\         /\  \         /\  \         /\  \    
+    /:/  /        /::\  \       /::|  |       /:/  /        /::\  \       /::\  \        \:\  \   
+   /:/__/        /:/\:\  \     /:|:|  |      /:/__/        /:/\:\  \     /:/\:\  \        \:\  \  
+  /::\  \ ___   /::\~\:\  \   /:/|:|  |__   /::\__\____   /::\~\:\  \   /::\~\:\  \        \:\  \ 
+ /:/\:\  /\__\ /:/\:\ \:\__\ /:/ |:| /\__\ /:/\:::::\__\ /:/\:\ \:\__\ /:/\:\ \:\__\ _______\:\__\
+ \/__\:\/:/  / \/__\:\/:/  / \/__|:|/:/  / \/_|:|~~|~    \:\~\:\ \/__/ \/_|::\/:/  / \::::::::/__/
+      \::/  /       \::/  /      |:/:/  /     |:|  |      \:\ \:\__\      |:|::/  /   \:\~~\~~    
+      /:/  /        /:/  /       |::/  /      |:|  |       \:\ \/__/      |:|\/__/     \:\  \     
+     /:/  /        /:/  /        /:/  /       |:|  |        \:\__\        |:|  |        \:\__\    
+     \/__/         \/__/         \/__/         \|__|         \/__/         \|__|         \/__/    </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Isometric1</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Isometric2 style=float:left class=fig contenteditable=true>      ___           ___           ___           ___           ___           ___           ___     
+     /\  \         /\  \         /\  \         /|  |         /\__\         /\  \         /\__\    
+     \:\  \       /::\  \        \:\  \       |:|  |        /:/ _/_       /::\  \       /::|  |   
+      \:\  \     /:/\:\  \        \:\  \      |:|  |       /:/ /\__\     /:/\:\__\     /:/:|  |   
+  ___ /::\  \   /:/ /::\  \   _____\:\  \   __|:|  |      /:/ /:/ _/_   /:/ /:/  /    /:/|:|  |__ 
+ /\  /:/\:\__\ /:/_/:/\:\__\ /::::::::\__\ /\ |:|__|____ /:/_/:/ /\__\ /:/_/:/__/___ /:/ |:| /\__\
+ \:\/:/  \/__/ \:\/:/  \/__/ \:\~~\~~\/__/ \:\/:::::/__/ \:\/:/ /:/  / \:\/:::::/  / \/__|:|/:/  /
+  \::/__/       \::/__/       \:\  \        \::/~~/~      \::/_/:/  /   \::/~~/~~~~      |:/:/  / 
+   \:\  \        \:\  \        \:\  \        \:\~~\        \:\/:/  /     \:\~~\          |::/  /  
+    \:\__\        \:\__\        \:\__\        \:\__\        \::/  /       \:\__\         |:/  /   
+     \/__/         \/__/         \/__/         \/__/         \/__/         \/__/         |/__/    </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Isometric2</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Isometric3 style=float:left class=fig contenteditable=true>      ___           ___           ___           ___           ___           ___           ___     
+     /__/\         /  /\         /__/\         /__/|         /  /\         /  /\         /  /\    
+     \  \:\       /  /::\        \  \:\       |  |:|        /  /:/_       /  /::\       /  /::|   
+      \__\:\     /  /:/\:\        \  \:\      |  |:|       /  /:/ /\     /  /:/\:\     /  /:/:|   
+  ___ /  /::\   /  /:/~/::\   _____\__\:\   __|  |:|      /  /:/ /:/_   /  /:/~/:/    /  /:/|:|__ 
+ /__/\  /:/\:\ /__/:/ /:/\:\ /__/::::::::\ /__/\_|:|____ /__/:/ /:/ /\ /__/:/ /:/___ /__/:/ |:| /\
+ \  \:\/:/__\/ \  \:\/:/__\/ \  \:\~~\~~\/ \  \:\/:::::/ \  \:\/:/ /:/ \  \:\/:::::/ \__\/  |:|/:/
+  \  \::/       \  \::/       \  \:\  ~~~   \  \::/~~~~   \  \::/ /:/   \  \::/~~~~      |  |:/:/ 
+   \  \:\        \  \:\        \  \:\        \  \:\        \  \:\/:/     \  \:\          |  |::/  
+    \  \:\        \  \:\        \  \:\        \  \:\        \  \::/       \  \:\         |  |:/   
+     \__\/         \__\/         \__\/         \__\/         \__\/         \__\/         |__|/    </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Isometric3</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Isometric4 style=float:left class=fig contenteditable=true>      ___           ___           ___           ___           ___           ___           ___     
+     /  /\         /  /\         /  /\         /  /\         /  /\         /  /\         /__/\    
+    /  /:/        /  /::\       /  /::|       /  /:/        /  /::\       /  /::\        \  \:\   
+   /  /:/        /  /:/\:\     /  /:|:|      /  /:/        /  /:/\:\     /  /:/\:\        \  \:\  
+  /  /::\ ___   /  /::\ \:\   /  /:/|:|__   /  /::\____   /  /::\ \:\   /  /::\ \:\        \  \:\ 
+ /__/:/\:\  /\ /__/:/\:\_\:\ /__/:/ |:| /\ /__/:/\:::::\ /__/:/\:\ \:\ /__/:/\:\_\:\  ______\__\:\
+ \__\/  \:\/:/ \__\/  \:\/:/ \__\/  |:|/:/ \__\/~|:|~~~~ \  \:\ \:\_\/ \__\/~|::\/:/ \  \::::::::/
+      \__\::/       \__\::/      |  |:/:/     |  |:|      \  \:\ \:\      |  |:|::/   \  \:\~~~~~ 
+      /  /:/        /  /:/       |__|::/      |  |:|       \  \:\_\/      |  |:|\/     \  \:\     
+     /__/:/        /__/:/        /__/:/       |__|:|        \  \:\        |__|:|~       \  \:\    
+     \__\/         \__\/         \__\/         \__\|         \__\/         \__\|         \__\/    </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Isometric4</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_JSBracketLetters style=float:left class=fig contenteditable=true>.-. .-.  .--.  .-. .-..-. .-..----..----.  .---. 
+| {_} | / {} \ |  `| || |/ / | {_  | {}  }{_   / 
+| { } |/  /\  \| |\  || |\ \ | {__ | .-. \ /    }
+`-' `-'`-'  `-'`-' `-'`-' `-'`----'`-' `-' `---' </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: JS Bracket Letters</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_LilDevil style=float:left class=fig contenteditable=true> (`-').-&gt; (`-')  _ &lt;-. (`-')_ &lt;-.(`-')  (`-')  _   (`-')   (`-')    
+ (OO )__  (OO ).-/    \( OO) ) __( OO)  ( OO).-/&lt;-.(OO )   ( OO).-&gt; 
+,--. ,'-' / ,---.  ,--./ ,--/ '-'. ,--.(,------.,------,),(_/----.  
+|  | |  | | \ /`.\ |   \ |  | |  .'   / |  .---'|   /`. '|__,    |  
+|  `-'  | '-'|_.' ||  . '|  |)|      /)(|  '--. |  |_.' | (_/   /   
+|  .-.  |(|  .-.  ||  |\    | |  .   '  |  .--' |  .   .' .'  .'_   
+|  | |  | |  | |  ||  | \   | |  |\   \ |  `---.|  |\  \ |       |  
+`--' `--' `--' `--'`--'  `--' `--' '--' `------'`--' '--'`-------'  </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Lil Devil</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Merlin1 style=float:left class=fig contenteditable=true>  __    __       __      _____  ___   __   ___  _______   _______  ________   
+ /" |  | "\     /""\    (\"   \|"  \ |/"| /  ")/"     "| /"      \("      "\  
+(:  (__)  :)   /    \   |.\\   \    |(: |/   /(: ______)|:        |\___/   :) 
+ \/      \/   /' /\  \  |: \.   \\  ||    __/  \/    |  |_____/   )  /  ___/  
+ //  __  \\  //  __'  \ |.  \    \. |(// _  \  // ___)_  //      /  //  \__   
+(:  (  )  :)/   /  \\  \|    \    \ ||: | \  \(:      "||:  __   \ (:   / "\  
+ \__|  |__/(___/    \___)\___|\____\)(__|  \__)\_______)|__|  \___) \_______) 
+                                                                              </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Merlin1</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Modular style=float:left class=fig contenteditable=true> __   __  _______  __    _  ___   _  _______  ______    _______ 
+|  | |  ||   _   ||  |  | ||   | | ||       ||    _ |  |       |
+|  |_|  ||  |_|  ||   |_| ||   |_| ||    ___||   | ||  |____   |
+|       ||       ||       ||      _||   |___ |   |_||_  ____|  |
+|       ||       ||  _    ||     |_ |    ___||    __  || ______|
+|   _   ||   _   || | |   ||    _  ||   |___ |   |  | || |_____ 
+|__| |__||__| |__||_|  |__||___| |_||_______||___|  |_||_______|</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Modular</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Ogre style=float:left class=fig contenteditable=true>                   _                 
+  /\  /\__ _ _ __ | | _____ _ __ ____
+ / /_/ / _` | '_ \| |/ / _ \ '__|_  /
+/ __  / (_| | | | |   &lt;  __/ |   / / 
+\/ /_/ \__,_|_| |_|_|\_\___|_|  /___|
+                                     </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Ogre</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_PatorjksCheese style=float:left class=fig contenteditable=true>                                                                                                      
+ ____   ____        ____  _____   ______    ____    ____       ______        _____      _____         
+|    | |    |  ____|\   \|\    \ |\     \  |    |  |    |  ___|\     \   ___|\    \    /    /|___     
+|    | |    | /    /\    \\\    \| \     \ |    |  |    | |     \     \ |    |\    \  /    /|    |    
+|    |_|    ||    |  |    |\|    \  \     ||    | /    // |     ,_____/||    | |    ||\____\|    |    
+|    .-.    ||    |__|    | |     \  |    ||    |/ _ _//  |     \--'\_|/|    |/____/ | |   |/    |___ 
+|    | |    ||    .--.    | |      \ |    ||    |\    \'  |     /___/|  |    |\    \  \|___/    /    |
+|    | |    ||    |  |    | |    |\ \|    ||    | \    \  |     \____|\ |    | |    |    /     /|    |
+|____| |____||____|  |____| |____||\_____/||____|  \____\ |____ '     /||____| |____|   |_____|/____/|
+|    | |    ||    |  |    | |    |/ \|   |||    |   |    ||    /_____/ ||    | |    |   |     |    | |
+|____| |____||____|  |____| |____|   |___|/|____|   |____||____|     | /|____| |____|   |_____|____|/ 
+  \(     )/    \(      )/     \(       )/    \(       )/    \( |_____|/   \(     )/       \(    )/    
+   '     '      '      '       '       '      '       '      '    )/       '     '         '    '     
+                                                                  '                                   </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Patorjk's Cheese</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_PatorjkHeX style=float:left class=fig contenteditable=true>                                                                                    _____                                    
+       __     __           _____        _____    _____     ______   _______    _____\    \ ___________      _____  ______    
+      /  \   /  \        /      |_     |\    \   \    \   |\     \  \      \  /    / |    |\          \    /    / /     /|   
+     /   /| |\   \      /         \     \\    \   |    |   \\     \  |     /|/    /  /___/| \    /\    \  |     |/     / |   
+    /   //   \\   \    |     /\    \     \\    \  |    |    \|     |/     //|    |__ |___|/  |   \_\    | |\____\\    / /    
+   /    \_____/    \   |    |  |    \     \|    \ |    |     |     |_____// |       \        |      ___/   \|___|/   / /     
+  /    /\_____/\    \  |     \/      \     |     \|    |     |     |\     \ |     __/ __     |      \  ____   /     /_/____  
+ /    //\_____/\\    \ |\      /\     \   /     /\      \   /     /|\|     ||\    \  /  \   /     /\ \/    \ /     /\      | 
+/____/ |       | \____\| \_____\ \_____\ /_____/ /______/| /_____/ |/_____/|| \____\/    | /_____/ |\______|/_____/ /_____/| 
+|    | |       | |    || |     | |     ||      | |     | ||     | / |    | || |    |____/| |     | | |     ||    |/|     | | 
+|____|/         \|____| \|_____|\|_____||______|/|_____|/ |_____|/  |____|/  \|____|   | | |_____|/ \|_____||____| |_____|/  
+                                                                                   |___|/                                    </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Patorjk-HeX</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Rectangles style=float:left class=fig contenteditable=true>                               
+ _____         _               
+|  |  |___ ___| |_ ___ ___ ___ 
+|     | .'|   | '_| -_|  _|- _|
+|__|__|__,|_|_|_,_|___|_| |___|
+                               </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Rectangles</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_RubiFont style=float:left class=fig contenteditable=true>▗▖ ▗▖ ▗▄▖ ▗▖  ▗▖▗▖ ▗▖▗▄▄▄▖▗▄▄▖ ▗▄▄▄▄▖
+▐▌ ▐▌▐▌ ▐▌▐▛▚▖▐▌▐▌▗▞▘▐▌   ▐▌ ▐▌   ▗▞▘
+▐▛▀▜▌▐▛▀▜▌▐▌ ▝▜▌▐▛▚▖ ▐▛▀▀▘▐▛▀▚▖ ▗▞▘  
+▐▌ ▐▌▐▌ ▐▌▐▌  ▐▌▐▌ ▐▌▐▙▄▄▖▐▌ ▐▌▐▙▄▄▄▖
+                                     
+                                     
+                                     </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: RubiFont</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_ShadedBlocky style=float:left class=fig contenteditable=true>░  ░░░░  ░░░      ░░░   ░░░  ░░  ░░░░  ░░        ░░       ░░░        ░
+▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒    ▒▒  ▒▒  ▒▒▒  ▒▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒  ▒▒▒▒▒▒▒  ▒▒
+▓        ▓▓  ▓▓▓▓  ▓▓  ▓  ▓  ▓▓     ▓▓▓▓▓      ▓▓▓▓       ▓▓▓▓▓▓  ▓▓▓▓
+█  ████  ██        ██  ██    ██  ███  ███  ████████  ███  ████  ██████
+█  ████  ██  ████  ██  ███   ██  ████  ██        ██  ████  ██        █
+                                                                      </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Shaded Blocky</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Slant style=float:left class=fig contenteditable=true>    __  __            __                
+   / / / /___ _____  / /_____  _________
+  / /_/ / __ `/ __ \/ //_/ _ \/ ___/_  /
+ / __  / /_/ / / / / ,&lt; /  __/ /    / /_
+/_/ /_/\__,_/_/ /_/_/|_|\___/_/    /___/
+                                        </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Slant</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_SlantRelief style=float:left class=fig contenteditable=true>__/\\\________/\\\_______________________________________________________________________________________        
+ _\/\\\_______\/\\\_______________________________/\\\____________________________________________________       
+  _\/\\\_______\/\\\______________________________\/\\\____________________________________________________      
+   _\/\\\\\\\\\\\\\\\__/\\\\\\\\\_____/\\/\\\\\\___\/\\\\\\\\________/\\\\\\\\___/\\/\\\\\\\___/\\\\\\\\\\\_     
+    _\/\\\/////////\\\_\////////\\\___\/\\\////\\\__\/\\\////\\\____/\\\/////\\\_\/\\\/////\\\_\///////\\\/__    
+     _\/\\\_______\/\\\___/\\\\\\\\\\__\/\\\__\//\\\_\/\\\\\\\\/____/\\\\\\\\\\\__\/\\\___\///_______/\\\/____   
+      _\/\\\_______\/\\\__/\\\/////\\\__\/\\\___\/\\\_\/\\\///\\\___\//\\///////___\/\\\____________/\\\/______  
+       _\/\\\_______\/\\\_\//\\\\\\\\/\\_\/\\\___\/\\\_\/\\\_\///\\\__\//\\\\\\\\\\_\/\\\__________/\\\\\\\\\\\_ 
+        _\///________\///___\////////\//__\///____\///__\///____\///____\//////////__\///__________\///////////__</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Slant Relief</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Small style=float:left class=fig contenteditable=true>  _  _           _              
+ | || |__ _ _ _ | |_____ _ _ ___
+ | __ / _` | ' \| / / -_) '_|_ /
+ |_||_\__,_|_||_|_\_\___|_| /__|
+                                </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Small</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_SmallSlant style=float:left class=fig contenteditable=true>   __ __          __             
+  / // /__ ____  / /_____ _______
+ / _  / _ `/ _ \/  '_/ -_) __/_ /
+/_//_/\_,_/_//_/_/\_\\__/_/  /__/
+                                 </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Small Slant</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_SmallIsometric1 style=float:left class=fig contenteditable=true>    ___       ___       ___       ___       ___       ___       ___   
+   /\__\     /\  \     /\__\     /\__\     /\  \     /\  \     /\  \  
+  /:/__/_   /::\  \   /:| _|_   /:/ _/_   /::\  \   /::\  \   _\:\  \ 
+ /::\/\__\ /::\:\__\ /::|/\__\ /::-"\__\ /::\:\__\ /::\:\__\ /::::\__\
+ \/\::/  / \/\::/  / \/|::/  / \;:;-",-" \:\:\/  / \;:::/  / \::;;/__/
+   /:/  /    /:/  /    |:/  /   |:|  |    \:\/  /   |:\/__/   \:\__\  
+   \/__/     \/__/     \/__/     \|__|     \/__/     \|__|     \/__/  </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Small Isometric1</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Soft style=float:left class=fig contenteditable=true>                                                       
+,--.  ,--.                ,--.                         
+|  '--'  | ,--,--.,--,--, |  |,-. ,---. ,--.--.,-----. 
+|  .--.  |' ,-.  ||      \|     /| .-. :|  .--'`-.  /  
+|  |  |  |\ '-'  ||  ||  ||  \  \\   --.|  |    /  `-. 
+`--'  `--' `--`--'`--''--'`--'`--'`----'`--'   `-----' 
+                                                       </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Soft</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Standard style=float:left class=fig contenteditable=true>  _   _             _                 
+ | | | | __ _ _ __ | | _____ _ __ ____
+ | |_| |/ _` | '_ \| |/ / _ \ '__|_  /
+ |  _  | (_| | | | |   &lt;  __/ |   / / 
+ |_| |_|\__,_|_| |_|_|\_\___|_|  /___|
+                                      </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Standard</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_StarWars style=float:left class=fig contenteditable=true> __    __       ___      .__   __.  __  ___  _______ .______      ________  
+|  |  |  |     /   \     |  \ |  | |  |/  / |   ____||   _  \    |       /  
+|  |__|  |    /  ^  \    |   \|  | |  '  /  |  |__   |  |_)  |   `---/  /   
+|   __   |   /  /_\  \   |  . `  | |    &lt;   |   __|  |      /       /  /    
+|  |  |  |  /  _____  \  |  |\   | |  .  \  |  |____ |  |\  \----. /  /----.
+|__|  |__| /__/     \__\ |__| \__| |__|\__\ |_______|| _| `._____|/________|
+                                                                            </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Star Wars</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_SubZero style=float:left class=fig contenteditable=true> __  __     ______     __   __     __  __     ______     ______     ______    
+/\ \_\ \   /\  __ \   /\ "-.\ \   /\ \/ /    /\  ___\   /\  == \   /\___  \   
+\ \  __ \  \ \  __ \  \ \ \-.  \  \ \  _"-.  \ \  __\   \ \  __&lt;   \/_/  /__  
+ \ \_\ \_\  \ \_\ \_\  \ \_\\"\_\  \ \_\ \_\  \ \_____\  \ \_\ \_\   /\_____\ 
+  \/_/\/_/   \/_/\/_/   \/_/ \/_/   \/_/\/_/   \/_____/   \/_/ /_/   \/_____/ 
+                                                                              </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Sub-Zero</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_SwampLand style=float:left class=fig contenteditable=true> ___   ___   ________   ___   __    ___   ___   ______   ______      ______     
+/__/\ /__/\ /_______/\ /__/\ /__/\ /___/\/__/\ /_____/\ /_____/\    /_____/\    
+\::\ \\  \ \\::: _  \ \\::\_\\  \ \\::.\ \\ \ \\::::_\/_\:::_ \ \   \:::__\/    
+ \::\/_\ .\ \\::(_)  \ \\:. `-\  \ \\:: \/_) \ \\:\/___/\\:(_) ) )_    /: /     
+  \:: ___::\ \\:: __  \ \\:. _    \ \\:. __  ( ( \::___\/_\: __ `\ \  /::/___   
+   \: \ \\::\ \\:.\ \  \ \\. \`-\  \ \\: \ )  \ \ \:\____/\\ \ `\ \ \/_:/____/\ 
+    \__\/ \::\/ \__\/\__\/ \__\/ \__\/ \__\/\__\/  \_____\/ \_\/ \_\/\_______\/ 
+                                                                                </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Swamp Land</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Sweet style=float:left class=fig contenteditable=true> ___                            ___                                         
+(   )                          (   )                                        
+ | | .-.     .---.   ___ .-.    | |   ___     .--.    ___ .-.       .--.    
+ | |/   \   / .-, \ (   )   \   | |  (   )   /    \  (   )   \     /    \   
+ |  .-. .  (__) ; |  |  .-. .   | |  ' /    |  .-. ;  | ' .-. ;   .  .-. |  
+ | |  | |    .'`  |  | |  | |   | |,' /     |  | | |  |  / (___)  | |  | |  
+ | |  | |   / .'| |  | |  | |   | .  '.     |  |/  |  | |         | |  | |  
+ | |  | |  | /  | |  | |  | |   | | `. \    |  ' _.'  | |        (___)-` /  
+ | |  | |  ; |  ; |  | |  | |   | |   \ \   |  .'.-.  | |            '. \   
+ | |  | |  ' `-'  |  | |  | |   | |    \ .  '  `-' /  | |          ___ \ '  
+(___)(___) `.__.'_. (___)(___) (___ ) (___)  `.__.'  (___)        (   ) ; | 
+                                                                   \ `-'  / 
+                                                                    ',__.'  </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Sweet</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_tmplr style=float:left class=fig contenteditable=true>┓┏    ┓      
+┣┫┏┓┏┓┃┏┏┓┏┓┓
+┛┗┗┻┛┗┛┗┗ ┛ ┗
+             </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: tmplr</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Train style=float:left class=fig contenteditable=true>  _  _                     _                             
+ | || |   __ _    _ _     | |__    ___      _ _     ___  
+ | __ |  / _` |  | ' \    | / /   / -_)    | '_|   |_ /  
+ |_||_|  \__,_|  |_||_|   |_\_\   \___|   _|_|_   _/__|  
+_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""| 
+"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-' </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Train</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Twisted style=float:left class=fig contenteditable=true>  __   __     _____    __   __   __  __     _____  __ __    _____     
+ /\_\ /_/\   /\___/\  /_/\ /\_\ /\_\\  /\ /\_____\/_/\__/\ /\____\    
+( ( (_) ) ) / / _ \ \ ) ) \ ( (( ( (/ / /( (_____/) ) ) ) )\/_ ( (    
+ \ \___/ /  \ \(_)/ //_/   \ \_\\ \_ / /  \ \__\ /_/ /_/_/    \ \_\   
+ / / _ \ \  / / _ \ \\ \ \   / // /  \ \  / /__/_\ \ \ \ \    / / /__ 
+( (_( )_) )( (_( )_) ))_) \ (_(( (_(\ \ \( (_____\)_) ) \ \  ( (____( 
+ \/_/ \_\/  \/_/ \_\/ \_\/ \/_/ \/_//__\/ \/_____/\_\/ \_\/   \/____/ 
+                                                                      </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Twisted</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_WetLetter style=float:left class=fig contenteditable=true> .-. .-.  .--.  .-. .-.,-. .-.,---.  ,---.   _____   
+ | | | | / /\ \ |  \| || |/ / | .-'  | .-.\ /___  /  
+ | `-' |/ /__\ \|   | || | /  | `-.  | `-'/    / /)  
+ | .-. ||  __  || |\  || | \  | .-'  |   (    / /(_) 
+ | | |)|| |  |)|| | |)|| |) \ |  `--.| |\ \  / /___  
+ /(  (_)|_|  (_)/(  (_)|((_)-'/( __.'|_| \)\(_____/  
+(__)           (__)    (_)   (__)        (__)        </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Wet Letter</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Varsity style=float:left class=fig contenteditable=true> ____  ____                  __                            
+|_   ||   _|                [  |  _                        
+  | |__| |   ,--.   _ .--.   | | / ] .---.  _ .--.  ____   
+  |  __  |  `'_\ : [ `.-. |  | '' &lt; / /__\\[ `/'`\][_   ]  
+ _| |  | |_ // | |, | | | |  | |`\ \| \__., | |     .' /_  
+|____||____|\'-;__/[___||__][__|  \_]'.__.'[___]   [_____] 
+                                                           </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Varsity</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig-ansi><pre id=taag_font_3DASCII style=float:left class=fig-ansi contenteditable=true> ___  ___  ________  ________   ___  __    _______   ________ ________     
+|\  \|\  \|\   __  \|\   ___  \|\  \|\  \ |\  ___ \ |\   __  \\_____  \    
+\ \  \\\  \ \  \|\  \ \  \\ \  \ \  \/  /|\ \   __/|\ \  \|\  \|___/  /|   
+ \ \   __  \ \   __  \ \  \\ \  \ \   ___  \ \  \_|/_\ \   _  _\  /  / /   
+  \ \  \ \  \ \  \ \  \ \  \\ \  \ \  \\ \  \ \  \_|\ \ \  \\  \|/  /_/__  
+   \ \__\ \__\ \__\ \__\ \__\\ \__\ \__\\ \__\ \_______\ \__\\ _\\________\
+    \|__|\|__|\|__|\|__|\|__| \|__|\|__| \|__|\|_______|\|__|\|__\|_______|
+                                                                           
+                                                                           
+                                                                           </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: 3D-ASCII</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_ANSIRegular style=float:left class=fig contenteditable=true>██   ██  █████  ███    ██ ██   ██ ███████ ██████  ███████ 
+██   ██ ██   ██ ████   ██ ██  ██  ██      ██   ██    ███  
+███████ ███████ ██ ██  ██ █████   █████   ██████    ███   
+██   ██ ██   ██ ██  ██ ██ ██  ██  ██      ██   ██  ███    
+██   ██ ██   ██ ██   ████ ██   ██ ███████ ██   ██ ███████ 
+                                                          
+                                                          </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: ANSI Regular</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig-ansi><pre id=taag_font_ANSIShadow style=float:left class=fig-ansi contenteditable=true>██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗███████╗██████╗ ███████╗
+██║  ██║██╔══██╗████╗  ██║██║ ██╔╝██╔════╝██╔══██╗╚══███╔╝
+███████║███████║██╔██╗ ██║█████╔╝ █████╗  ██████╔╝  ███╔╝ 
+██╔══██║██╔══██║██║╚██╗██║██╔═██╗ ██╔══╝  ██╔══██╗ ███╔╝  
+██║  ██║██║  ██║██║ ╚████║██║  ██╗███████╗██║  ██║███████╗
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
+                                                          </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: ANSI Shadow</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig-ansi><pre id=taag_font_Bloody style=float:left class=fig-ansi contenteditable=true> ██░ ██  ▄▄▄       ███▄    █  ██ ▄█▀▓█████  ██▀███  ▒███████▒
+▓██░ ██▒▒████▄     ██ ▀█   █  ██▄█▒ ▓█   ▀ ▓██ ▒ ██▒▒ ▒ ▒ ▄▀░
+▒██▀▀██░▒██  ▀█▄  ▓██  ▀█ ██▒▓███▄░ ▒███   ▓██ ░▄█ ▒░ ▒ ▄▀▒░ 
+░▓█ ░██ ░██▄▄▄▄██ ▓██▒  ▐▌██▒▓██ █▄ ▒▓█  ▄ ▒██▀▀█▄    ▄▀▒   ░
+░▓█▒░██▓ ▓█   ▓██▒▒██░   ▓██░▒██▒ █▄░▒████▒░██▓ ▒██▒▒███████▒
+ ▒ ░░▒░▒ ▒▒   ▓▒█░░ ▒░   ▒ ▒ ▒ ▒▒ ▓▒░░ ▒░ ░░ ▒▓ ░▒▓░░▒▒ ▓░▒░▒
+ ▒ ░▒░ ░  ▒   ▒▒ ░░ ░░   ░ ▒░░ ░▒ ▒░ ░ ░  ░  ░▒ ░ ▒░░░▒ ▒ ░ ▒
+ ░  ░░ ░  ░   ▒      ░   ░ ░ ░ ░░ ░    ░     ░░   ░ ░ ░ ░ ░ ░
+ ░  ░  ░      ░  ░         ░ ░  ░      ░  ░   ░       ░ ░    
+                                                    ░        </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Bloody</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig-ansi><pre id=taag_font_CalvinS style=float:left class=fig-ansi contenteditable=true>╦ ╦┌─┐┌┐┌┬┌─┌─┐┬─┐┌─┐
+╠═╣├─┤│││├┴┐├┤ ├┬┘┌─┘
+╩ ╩┴ ┴┘└┘┴ ┴└─┘┴└─└─┘</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Calvin S</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig-ansi><pre id=taag_font_DeltaCorpsPriest1 style=float:left class=fig-ansi contenteditable=true>   ▄█    █▄       ▄████████ ███▄▄▄▄      ▄█   ▄█▄    ▄████████    ▄████████  ▄███████▄  
+  ███    ███     ███    ███ ███▀▀▀██▄   ███ ▄███▀   ███    ███   ███    ███ ██▀     ▄██ 
+  ███    ███     ███    ███ ███   ███   ███▐██▀     ███    █▀    ███    ███       ▄███▀ 
+ ▄███▄▄▄▄███▄▄   ███    ███ ███   ███  ▄█████▀     ▄███▄▄▄      ▄███▄▄▄▄██▀  ▀█▀▄███▀▄▄ 
+▀▀███▀▀▀▀███▀  ▀███████████ ███   ███ ▀▀█████▄    ▀▀███▀▀▀     ▀▀███▀▀▀▀▀     ▄███▀   ▀ 
+  ███    ███     ███    ███ ███   ███   ███▐██▄     ███    █▄  ▀███████████ ▄███▀       
+  ███    ███     ███    ███ ███   ███   ███ ▀███▄   ███    ███   ███    ███ ███▄     ▄█ 
+  ███    █▀      ███    █▀   ▀█   █▀    ███   ▀█▀   ██████████   ███    ███  ▀████████▀ 
+                                        ▀                        ███    ███             </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Delta Corps Priest 1</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig-ansi><pre id=taag_font_Electronic style=float:left class=fig-ansi contenteditable=true> ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄    ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌     ▐░▌▐░▌ ▐░▌ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌
+▐░▌       ▐░▌▐░▌       ▐░▌▐░▌▐░▌    ▐░▌▐░▌▐░▌  ▐░▌          ▐░▌       ▐░▌          ▐░▌
+▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌ ▐░▌   ▐░▌▐░▌░▌   ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌ ▄▄▄▄▄▄▄▄▄█░▌
+▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░░▌    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌   ▐░▌ ▐░▌▐░▌░▌   ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀▀▀ 
+▐░▌       ▐░▌▐░▌       ▐░▌▐░▌    ▐░▌▐░▌▐░▌▐░▌  ▐░▌          ▐░▌     ▐░▌  ▐░▌          
+▐░▌       ▐░▌▐░▌       ▐░▌▐░▌     ▐░▐░▌▐░▌ ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄ 
+▐░▌       ▐░▌▐░▌       ▐░▌▐░▌      ▐░░▌▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌
+ ▀         ▀  ▀         ▀  ▀        ▀▀  ▀    ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀ 
+                                                                                      </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Electronic</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig-ansi><pre id=taag_font_Elite style=float:left class=fig-ansi contenteditable=true> ▄ .▄ ▄▄▄·  ▐ ▄ ▄ •▄ ▄▄▄ .▄▄▄  ·▄▄▄▄•
+██▪▐█▐█ ▀█ •█▌▐██▌▄▌▪▀▄.▀·▀▄ █·▪▀·.█▌
+██▀▐█▄█▀▀█ ▐█▐▐▌▐▀▀▄·▐▀▀▪▄▐▀▀▄ ▄█▀▀▀•
+██▌▐▀▐█ ▪▐▌██▐█▌▐█.█▌▐█▄▄▌▐█•█▌█▌▪▄█▀
+▀▀▀ · ▀  ▀ ▀▀ █▪·▀  ▀ ▀▀▀ .▀  ▀·▀▀▀ •</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Elite</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig-ansi><pre id=taag_font_StrongerThanAll style=float:left class=fig-ansi contenteditable=true>.___.__ &nbsp;.______ &nbsp;.______ &nbsp;.____/\&nbsp;._______.______ &nbsp;.______ 
+: &nbsp; | &nbsp;\&nbsp;: &nbsp; &nbsp; &nbsp;\&nbsp;: &nbsp; &nbsp; &nbsp;\&nbsp;: &nbsp; / &nbsp;\: .____/: __ &nbsp; \&nbsp;\____ &nbsp;|
+| &nbsp; : &nbsp; || &nbsp; . &nbsp; || &nbsp; &nbsp; &nbsp; ||. &nbsp;___/| : _/\&nbsp;| &nbsp;\____|/ &nbsp;____|
+| &nbsp; . &nbsp; || &nbsp; : &nbsp; || &nbsp; | &nbsp; || &nbsp; &nbsp; \&nbsp;| &nbsp; / &nbsp;\| &nbsp; : &nbsp;\&nbsp;\ &nbsp; &nbsp; &nbsp;|
+|___| &nbsp; ||___| &nbsp; ||___| &nbsp; || &nbsp; &nbsp; &nbsp;\|_.: __/| &nbsp; |___\&nbsp;\__:__|
+&nbsp; &nbsp; |___|&nbsp; &nbsp; |___|&nbsp; &nbsp; |___||___\ &nbsp;/&nbsp; &nbsp;:/ &nbsp;&nbsp;|___| &nbsp; &nbsp;&nbsp; &nbsp; : &nbsp;&nbsp;
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;\/&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;         &nbsp; &nbsp; • &nbsp;&nbsp;
+                                                            
+                                                            </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Stronger Than All</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig-ansi><pre id=taag_font_THIS style=float:left class=fig-ansi contenteditable=true> ▄▀▀▄ ▄▄   ▄▀▀█▄   ▄▀▀▄ ▀▄  ▄▀▀▄ █  ▄▀▀█▄▄▄▄  ▄▀▀▄▀▀▀▄  ▄▀▀▀▀▄   
+█  █   ▄▀ ▐ ▄▀ ▀▄ █  █ █ █ █  █ ▄▀ ▐  ▄▀   ▐ █   █   █ █     ▄▀  
+▐  █▄▄▄█    █▄▄▄█ ▐  █  ▀█ ▐  █▀▄    █▄▄▄▄▄  ▐  █▀▀█▀  ▐ ▄▄▀▀    
+   █   █   ▄▀   █   █   █    █   █   █    ▌   ▄▀    █    █       
+  ▄▀  ▄▀  █   ▄▀  ▄▀   █   ▄▀   █   ▄▀▄▄▄▄   █     █      ▀▄▄▄▄▀ 
+ █   █    ▐   ▐   █    ▐   █    ▐   █    ▐   ▐     ▐          ▐  
+ ▐   ▐            ▐        ▐        ▐                            </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: THIS</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig-ansi><pre id=taag_font_TheEdge style=float:left class=fig-ansi contenteditable=true> ▄  █ ██      ▄   █  █▀ ▄███▄   █▄▄▄▄  ▄▄▄▄▄▄   
+█   █ █ █      █  █▄█   █▀   ▀  █  ▄▀ ▀   ▄▄▀   
+██▀▀█ █▄▄█ ██   █ █▀▄   ██▄▄    █▀▀▌   ▄▀▀   ▄▀ 
+█   █ █  █ █ █  █ █  █  █▄   ▄▀ █  █   ▀▀▀▀▀▀   
+   █     █ █  █ █   █   ▀███▀     █             
+  ▀     █  █   ██  ▀             ▀              
+       ▀                                        </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: The Edge</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_1Row style=float:left class=fig contenteditable=true>|-| /\ |\| /&lt; [- /? ~/_ 
+                        </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: 1Row</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_3D style=float:left class=fig contenteditable=true> **      **                    **                          
+/**     /**                   /**                          
+/**     /**  ******   ******* /**  **  *****  ****** ******
+/********** //////** //**///**/** **  **///**//**//*////** 
+/**//////**  *******  /**  /**/****  /******* /** /    **  
+/**     /** **////**  /**  /**/**/** /**////  /**     **   
+/**     /**//******** ***  /**/**//**//******/***    ******
+//      //  //////// ///   // //  //  ////// ///    ////// </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: 3-D</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_3x5 style=float:left class=fig contenteditable=true>                            
+# #         #               
+# #  ## ##  # # ### ### ##  
+### # # # # ##  ##  #    #  
+# # ### # # # # ### #    ## 
+# #                         </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: 3x5</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_4Max style=float:left class=fig contenteditable=true>88  88    db    88b 88 88  dP 888888 88""Yb 8888P 
+88  88   dPYb   88Yb88 88odP  88__   88__dP   dP  
+888888  dP__Yb  88 Y88 88"Yb  88""   88"Yb   dP   
+88  88 dP""""Yb 88  Y8 88  Yb 888888 88  Yb d8888 </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: 4Max</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_5LineOblique style=float:left class=fig contenteditable=true>                                                                 
+    //    / /                                                    
+   //___ / /  ___       __     / ___      ___      __     ___    
+  / ___   / //   ) ) //   ) ) //\ \     //___) ) //  ) )    / /  
+ //    / / //   / / //   / / //  \ \   //       //         / /   
+//    / / ((___( ( //   / / //    \ \ ((____   //         / /__  </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: 5 Line Oblique</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMC3Line style=float:left class=fig contenteditable=true>. . .-. . . . . .-. .-. .-. 
+|-| |-| |\| |&lt;  |-  |(   /  
+' ` ` ' ' ` ' ` `-' ' ' `-' 
+                            </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC 3 Line</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMC3Liv1 style=float:left class=fig contenteditable=true>.:;S;:. .:;S;:. .:;S;:. .     .         .:;.;:. .:;S  . 
+   S    S  S     /       `:s:'  S  S  S S  S    S  S  S 
+`:;S;:' `:;S;:' `:;S;:' `:;S;:' `:;S;:' `:;S;:' `  S;:' 
+                                                        </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC 3 Liv1</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMCAAA01 style=float:left class=fig contenteditable=true> .S    S.    .S_SSSs     .S_sSSs     .S    S.     sSSs   .S_sSSs     sdSSSSSSSbs  
+.SS    SS.  .SS~SSSSS   .SS~YS%%b   .SS    SS.   d%%SP  .SS~YS%%b    YSSSSSSSS%S  
+S%S    S%S  S%S   SSSS  S%S   `S%b  S%S    S&amp;S  d%S'    S%S   `S%b          S%S   
+S%S    S%S  S%S    S%S  S%S    S%S  S%S    d*S  S%S     S%S    S%S         S&amp;S    
+S%S SSSS%S  S%S SSSS%S  S%S    S&amp;S  S&amp;S   .S*S  S&amp;S     S%S    d*S        S&amp;S     
+S&amp;S  SSS&amp;S  S&amp;S  SSS%S  S&amp;S    S&amp;S  S&amp;S_sdSSS   S&amp;S_Ss  S&amp;S   .S*S        S&amp;S     
+S&amp;S    S&amp;S  S&amp;S    S&amp;S  S&amp;S    S&amp;S  S&amp;S~YSSY%b  S&amp;S~SP  S&amp;S_sdSSS        S&amp;S      
+S&amp;S    S&amp;S  S&amp;S    S&amp;S  S&amp;S    S&amp;S  S&amp;S    `S%  S&amp;S     S&amp;S~YSY%b       S*S       
+S*S    S*S  S*S    S&amp;S  S*S    S*S  S*S     S%  S*b     S*S   `S%b     S*S        
+S*S    S*S  S*S    S*S  S*S    S*S  S*S     S&amp;  S*S.    S*S    S%S   .s*S         
+S*S    S*S  S*S    S*S  S*S    S*S  S*S     S&amp;   SSSbs  S*S    S&amp;S   sY*SSSSSSSP  
+SSS    S*S  SSS    S*S  S*S    SSS  S*S     SS    YSSP  S*S    SSS  sY*SSSSSSSSP  
+       SP          SP   SP          SP                  SP                        
+       Y           Y    Y           Y                   Y                         
+                                                                                  </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC AAA01</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMCNeko style=float:left class=fig contenteditable=true>.sSSS SSSSS                                                                              
+SSSSS SSSSS .sSSSSs.    .sSSSs.  SSSSS .sSSS  SSSSS  .sSSSSs.    .sSSSSSSSs. SSSSSSSSSs. 
+S SSS SSSSS S SSSSSSSs. S SSS SS SSSSS S SSS SSSSS   S SSSSSSSs. S SSS SSSSS SSSSSS SSS' 
+S  SS SSSSS S  SS SSSSS S  SS  `sSSSSS S  SS SSSSS   S  SS SSSS' S  SS SSSS'     S  SS   
+S..SSsSSSSS S..SSsSSSSS S..SS    SSSSS S..SSsSSSSS   S..SS       S..SSsSSSa.    S..SS    
+S:::S SSSSS S:::S SSSSS S:::S    SSSSS S:::S SSSSS   S:::SSSS    S:::S SSSSS   S:::S     
+S;;;S SSSSS S;;;S SSSSS S;;;S    SSSSS S;;;S  SSSSS  S;;;S       S;;;S SSSSS  S;;;S      
+S%%%S SSSSS S%%%S SSSSS S%%%S    SSSSS S%%%S  SSSSS  S%%%S SSSSS S%%%S SSSSS S%%%SSSSSSS 
+SSSSS SSSSS SSSSS SSSSS SSSSS    SSSSS SSSSS   SSSSS SSSSSsSS;:' SSSSS SSSSS SSSSSSSSSSS 
+                                                                                         </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC Neko</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMCRazor style=float:left class=fig contenteditable=true>                               ___                     ___        __   ___   ___  
+  .'| |`.     .'|=|`.     .'| |   |   .'|   .'|   .'|=|_.'   .'|=|  |  `._|=|   | 
+.'  | |  `. .'  | |  `. .'  |\|   | .'  | .' .' .'  |  ___ .'  | |  |       |  .' 
+|   |=|   | |   |=|   | |   | |   | |   |=|.:   |   |=|_.' |   |=|.'    .'|=|.'   
+|   | |   | |   | |   | |   | |  .' |   |   |'. |   |  ___ |   |  |`. .'  |  ___  
+|___| |___| |___| |___| |___| |.'   |___|   |_| |___|=|_.' |___|  |_| |___|=|_.'  
+                                                                                  </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC Razor</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMCRazor2 style=float:left class=fig contenteditable=true>   . .       . .       . .       .  .       . .       . .              
+.+'| |`+. .+'|=|`+. .+'|=|`+. .+'|  |`.  .+'|=|`+. .+'|=|`+. |~~|=|~~| 
+|  | |  | |  | |  | |  | `+ | |  | .+ |  |  | `+.| |  | |  | |.+' |  | 
+|  |=|  | |  |=|  | |  |  | | |  |=|.+'  |  |=|`.  |  |'. '.      |.+' 
+|  | |  | |  | |  | |  |  | | |  |  |`+. |  | `.|  |  | |  |    .='    
+|  | |  | |  | |  | |  |  | | |  |  |  | |  |    . |  | |  | .+'|    . 
+|  | |  | |  | |  | |  |  | | |  |  |  | |  | .+'| |  | |  | |  | .+'| 
+`+.| |..| `+.| |..| `+.|  |.| `+.|  |..| `+.|=|.+' `+.| |.+' |..|=|..| 
+                                                                       </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC Razor2</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMCSlash style=float:left class=fig contenteditable=true>.s    s.                                                              
+      SS. .s5SSSs.  .s    s.  .s    s.  .s5SSSs.  .s5SSSs.  .s5SSSSs. 
+sS    S%S       SS.       SS.       SS.       SS.       SS.       SSS 
+SS    S%S sS    S%S sSs.  S%S sS    S%S sS    `:; sS    S%S     sSSS  
+SSSs. S%S SSSs. S%S SS `S.S%S SSSSs.S:' SSSs.     SS .sS;:'    sSS"   
+SS    S%S SS    S%S SS  `sS%S SS  "SS.  SS        SS    ;,    sSS     
+SS    `:; SS    `:; SS    `:; SS    `:; SS        SS    `:;  sSS      
+SS    ;,. SS    ;,. SS    ;,. SS    ;,. SS    ;,. SS    ;,. sSS       
+:;    ;:' :;    ;:' :;    ;:' :;    ;:' `:;;;;;:' `:    ;:' `:;;;;;:' 
+                                                                      </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC Slash</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMCSlider style=float:left class=fig contenteditable=true>                                                      ____                                
+|         |       .'.       |..          | |    ..'' |            |`````````, `````````:' 
+|_________|     .''```.     |  ``..      | |..''     |______      |'''|'''''        ..'   
+|         |   .'       `.   |      ``..  | |``..     |            |    `.       ..''      
+|         | .'           `. |          ``| |    ``.. |___________ |      `.   .:,,,,,,,,, 
+                                                                                          </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC Slider</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMCThin style=float:left class=fig contenteditable=true>.-.   .-. .-..-..-. .-..-.  .-. .-.  .-.  .-..--. .-..-.   .-..-. 
+| | _ | | | | ~ | | | | ~.-.| | | | _`-'  | | ~~  | | ~.-.  ~ | | 
+| |`-'| | | |.-.| | | |   ~ | | | |`-'.-. | | _   | |.-.~     |/  
+| |   | | | | ~ | | | |     | | | |   | | | |`-'  | | ~.-.  /|    
+| |   | | | |   | | | |     | | | |   | | | | __  | |  | | | | _  
+`-'   `-' `-'   `-' `-'     `-' `-'   `-' `-'`--' `-'  `-' `-'`-' 
+                                                                  </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC Thin</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMCTubes style=float:left class=fig contenteditable=true>d    d d s.   d s  b d     S d sss   d ss.  sSSSSSs 
+S    S S  ~O  S  S S S    P  S       S    b      s  
+S    S S   `b S   SS Ssss'   S       S    P     s   
+S sSSS S sSSO S    S S   s   S sSSs  S sS'     s    
+S    S S    O S    S S    b  S       S   S    s     
+S    S S    O S    S S     b S       S    S  s      
+P    P P    P P    P P     P P sSSss P    P sSSSSSs 
+                                                    </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC Tubes</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_AMCUntitled style=float:left class=fig contenteditable=true>,'',   ,'',                                                          
+;  ;   ;  ;                                                          
+;  ;,',;  ; ,'',,''', ,'',,'', ,'',,'',  ,'',,'', ,'',,'',  ,'',,'', 
+;  ;',';  ; ;  ;',  ; ;  ;', ; ;  ;',,'  ;  ;',,' ;  ;',  ;  '',;,,' 
+;  ;   ;  ; ;  ;,'  ; ;  ; ; ; ;  ;;  ;  ;  ;',,' ;  ;,' ,'   ',,'   
+;  ;   ;  ; ;  ;',  ; ;  ; ; ; ;  ; ;  ; ;  ; ,,  ;  ;', ', ,'', ,,  
+',,'   ',,' ',,' ',,' ',,' ',' ',,' ',,' ',,'',,' ',,' ',,' ',,'',,' 
+                                                                     </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: AMC Untitled</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_ASCIINewRoman style=float:left class=fig contenteditable=true> __, _, ____,_,  _,__, ,____,____, ___,  
+(-|__| (-/_|(-|\ |( |_/(-|_,(-|__)(- /   
+ _|  |,_/  |,_| \|,_| \,_|__,_|  \,_/__, 
+(     (     (     (    (    (     (      </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: ASCII New Roman</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Alligator style=float:left class=fig contenteditable=true>      :::    :::     :::     ::::    ::: :::    ::: :::::::::: :::::::::  ::::::::: 
+     :+:    :+:   :+: :+:   :+:+:   :+: :+:   :+:  :+:        :+:    :+:      :+:   
+    +:+    +:+  +:+   +:+  :+:+:+  +:+ +:+  +:+   +:+        +:+    +:+     +:+     
+   +#++:++#++ +#++:++#++: +#+ +:+ +#+ +#++:++    +#++:++#   +#++:++#:     +#+       
+  +#+    +#+ +#+     +#+ +#+  +#+#+# +#+  +#+   +#+        +#+    +#+   +#+         
+ #+#    #+# #+#     #+# #+#   #+#+# #+#   #+#  #+#        #+#    #+#  #+#           
+###    ### ###     ### ###    #### ###    ### ########## ###    ### #########       </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Alligator</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Alligator2 style=float:left class=fig contenteditable=true>:::    :::     :::     ::::    ::: :::    ::: :::::::::: :::::::::  ::::::::: 
+:+:    :+:   :+: :+:   :+:+:   :+: :+:   :+:  :+:        :+:    :+:      :+:  
++:+    +:+  +:+   +:+  :+:+:+  +:+ +:+  +:+   +:+        +:+    +:+     +:+   
++#++:++#++ +#++:++#++: +#+ +:+ +#+ +#++:++    +#++:++#   +#++:++#:     +#+    
++#+    +#+ +#+     +#+ +#+  +#+#+# +#+  +#+   +#+        +#+    +#+   +#+     
+#+#    #+# #+#     #+# #+#   #+#+# #+#   #+#  #+#        #+#    #+#  #+#      
+###    ### ###     ### ###    #### ###    ### ########## ###    ### ######### </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Alligator2</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Alphabet style=float:left class=fig contenteditable=true>H  H          k                
+H  H          k k              
+HHHH  aa nnn  kk   eee rrr zz  
+H  H a a n  n k k  e e r    z  
+H  H aaa n  n k  k ee  r    zz 
+                               
+                               </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Alphabet</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Arrows style=float:left class=fig contenteditable=true>&gt;=&gt;    &gt;=&gt;                       &gt;=&gt;                                  
+&gt;=&gt;    &gt;=&gt;                       &gt;=&gt;                                  
+&gt;=&gt;    &gt;=&gt;    &gt;=&gt; &gt;=&gt;  &gt;==&gt;&gt;==&gt;  &gt;=&gt;  &gt;=&gt;   &gt;==&gt;    &gt;&gt; &gt;==&gt; &gt;====&gt;&gt;=&gt; 
+&gt;=====&gt;&gt;=&gt;  &gt;=&gt;   &gt;=&gt;   &gt;=&gt;  &gt;=&gt; &gt;=&gt; &gt;=&gt;  &gt;&gt;   &gt;=&gt;   &gt;=&gt;         &gt;=&gt;  
+&gt;=&gt;    &gt;=&gt; &gt;=&gt;    &gt;=&gt;   &gt;=&gt;  &gt;=&gt; &gt;=&gt;=&gt;    &gt;&gt;===&gt;&gt;=&gt;  &gt;=&gt;       &gt;=&gt;    
+&gt;=&gt;    &gt;=&gt;  &gt;=&gt;   &gt;=&gt;   &gt;=&gt;  &gt;=&gt; &gt;=&gt; &gt;=&gt;  &gt;&gt;         &gt;=&gt;      &gt;=&gt;     
+&gt;=&gt;    &gt;=&gt;   &gt;==&gt;&gt;&gt;==&gt; &gt;==&gt;  &gt;=&gt; &gt;=&gt;  &gt;=&gt;  &gt;====&gt;   &gt;==&gt;    &gt;=======&gt; 
+                                                                      </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Arrows</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Banner style=float:left class=fig contenteditable=true> #     #                                           
+ #     #   ##   #    # #    # ###### #####  ###### 
+ #     #  #  #  ##   # #   #  #      #    #     #  
+ ####### #    # # #  # ####   #####  #    #    #   
+ #     # ###### #  # # #  #   #      #####    #    
+ #     # #    # #   ## #   #  #      #   #   #     
+ #     # #    # #    # #    # ###### #    # ###### 
+                                                   </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Banner</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Banner3D style=float:left class=fig contenteditable=true>'##::::'##::::'###::::'##::: ##:'##:::'##:'########:'########::'########:
+ ##:::: ##:::'## ##::: ###:: ##: ##::'##:: ##.....:: ##.... ##:..... ##::
+ ##:::: ##::'##:. ##:: ####: ##: ##:'##::: ##::::::: ##:::: ##::::: ##:::
+ #########:'##:::. ##: ## ## ##: #####:::: ######::: ########::::: ##::::
+ ##.... ##: #########: ##. ####: ##. ##::: ##...:::: ##.. ##::::: ##:::::
+ ##:::: ##: ##.... ##: ##:. ###: ##:. ##:: ##::::::: ##::. ##::: ##::::::
+ ##:::: ##: ##:::: ##: ##::. ##: ##::. ##: ########: ##:::. ##: ########:
+..:::::..::..:::::..::..::::..::..::::..::........::..:::::..::........::</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Banner3-D</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Banner3 style=float:left class=fig contenteditable=true>##     ##    ###    ##    ## ##    ## ######## ########  ######## 
+##     ##   ## ##   ###   ## ##   ##  ##       ##     ##      ##  
+##     ##  ##   ##  ####  ## ##  ##   ##       ##     ##     ##   
+######### ##     ## ## ## ## #####    ######   ########     ##    
+##     ## ######### ##  #### ##  ##   ##       ##   ##     ##     
+##     ## ##     ## ##   ### ##   ##  ##       ##    ##   ##      
+##     ## ##     ## ##    ## ##    ## ######## ##     ## ######## </pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Banner3</div><button>Use Font</button><button>Select &amp; Copy</button></div><p><div style="border-top:1px dashed black;--darkreader-inline-border-top:var(--darkreader-border-000000,#8c8273)" data-darkreader-inline-border-top></div><div class=fig><pre id=taag_font_Banner4 style=float:left class=fig contenteditable=true>.##.....##....###....##....##.##....##.########.########..########
+.##.....##...##.##...###...##.##...##..##.......##.....##......##.
+.##.....##..##...##..####..##.##..##...##.......##.....##.....##..
+.#########.##.....##.##.##.##.#####....######...########.....##...
+.##.....##.#########.##..####.##..##...##.......##...##.....##....
+.##.....##.##.....##.##...###.##...##..##.......##....##...##.....
+.##.....##.##.....##.##....##.##....##.########.##.....##.########</pre><div style=clear:both></div></div><div><div style=margin-bottom:4px>Font Name: Banner4</div><button>Use Font</button><button>Select &amp; Copy</button></div><p></p></div><ins class="adsbygoogle sf-hidden" style=display:block data-ad-client=ca-pub-0613074263309085 data-ad-slot=5096824876 data-ad-format=auto data-full-width-responsive=true></ins></div>
+ </div>
+ 
+ 
+ 
+ 
+ <div style=display:none class=taag-sb></div>
+ 
+ 
+ 
+ 
+ 
+<iframe scrolling=no frameborder=0 allowtransparency=true title="Twitter settings iframe" style=display:none></iframe><iframe name=oauth2relay728035221 id=oauth2relay728035221 style=width:1px;height:1px;position:absolute;top:-100px tabindex=-1 aria-hidden=true sandbox="allow-popups allow-top-navigation-by-user-activation" srcdoc="<!DOCTYPE html> <html data-darkreader-mode=dynamic data-darkreader-scheme=dark><meta charset=utf-8><style class=&quot;darkreader darkreader--variables&quot; media=screen>:root{--darkreader-neutral-background:var(--darkreader-background-ffffff,#181a1b);--darkreader-neutral-text:var(--darkreader-text-000000,#e8e6e3);--darkreader-selection-background:var(--darkreader-background-0060d4,#004daa);--darkreader-selection-text:var(--darkreader-text-ffffff,#e8e6e3)}</style><style class=&quot;darkreader darkreader--user-agent&quot; media=screen>@layer{html{color-scheme:dark!important}iframe{color-scheme:dark!important}html,body{border-color:#736b5e;color:var(--darkreader-text-000000,#e8e6e3)}a{color:#3391ff}table{border-color:#545b5e}mark{color:var(--darkreader-text-000000,#e8e6e3)}::placeholder{color:#b2aba1}input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill{background-color:#404400!important;color:var(--darkreader-text-000000,#e8e6e3)!important}::selection{background-color:#004daa!important;color:#e8e6e3!important}::-moz-selection{background-color:#004daa!important;color:#e8e6e3!important}}</style><title></title><meta http-equiv=X-UA-Compatible content=&quot;IE=edge&quot;><meta name=viewport content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0&quot;><meta name=darkreader content=6a36bd7468d5d1dfa98ecd783e80ef02><style class=&quot;darkreader darkreader--override&quot; media=screen>::placeholder{opacity:0.5!important}</style><meta name=referrer content=no-referrer><meta http-equiv=content-security-policy content=&quot;default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;&quot;>"></iframe><iframe id=rufous-sandbox scrolling=no frameborder=0 allowtransparency=true allowfullscreen style=position:absolute;visibility:hidden;display:none;width:0px;height:0px;padding:0px;border:medium;--darkreader-inline-border-top:currentcolor;--darkreader-inline-border-right:currentcolor;--darkreader-inline-border-bottom:currentcolor;--darkreader-inline-border-left:currentcolor data-darkreader-inline-border-top data-darkreader-inline-border-right data-darkreader-inline-border-bottom data-darkreader-inline-border-left title="Twitter analytics iframe"></iframe>
